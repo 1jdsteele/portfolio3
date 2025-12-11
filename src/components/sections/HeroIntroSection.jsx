@@ -1,8 +1,9 @@
+// src/components/sections/HeroIntroSection.jsx
 import { useEffect, useState } from "react";
-import "./HeroIntroSection.css"; // optional external CSS
+import { heroImages } from "../../data/heroImages.js";
+import "./HeroIntroSection.css";
 
 export default function HeroIntroSection() {
-  // Array of rotating titles
   const roles = [
     "Full-Stack Engineer",
     "Grad Student",
@@ -10,24 +11,43 @@ export default function HeroIntroSection() {
     "React + Supabase Developer",
   ];
 
-  const [index, setIndex] = useState(0);
+  const [roleIndex, setRoleIndex] = useState(0);
+  const [bgIndex, setBgIndex] = useState(0);
 
-  // Simple interval rotator
+  // rotate text roles
   useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % roles.length);
-    }, 2000); // change every 2 seconds
+    const id = setInterval(() => {
+      setRoleIndex((prev) => (prev + 1) % roles.length);
+    }, 2000);
+    return () => clearInterval(id);
+  }, [roles.length]);
 
-    return () => clearInterval(interval);
+  // rotate background images
+  useEffect(() => {
+    const id = setInterval(() => {
+      setBgIndex((prev) => (prev + 1) % heroImages.length);
+    }, 5000);
+    return () => clearInterval(id);
   }, []);
 
   return (
-    <section className="hero-intro-container">
+    <section className="hero-section">
+      {/* sliding background layer */}
+      <div className="hero-bg-slider">
+        {heroImages.map((img, i) => (
+          <div
+            key={i}
+            className={`hero-bg-slide ${i === bgIndex ? "active" : ""}`}
+            style={{ backgroundImage: `url(${img})` }}
+          />
+        ))}
+      </div>
+
+      {/* text overlay */}
       <div className="hero-overlay">
         <h1 className="hero-title">Hi, I'm Jake Steele</h1>
-
         <h2 className="hero-subtitle">
-          I am <span className="hero-role">{roles[index]}</span>
+          I am a <span className="hero-role">{roles[roleIndex]}</span>
         </h2>
       </div>
     </section>
