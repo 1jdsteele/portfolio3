@@ -1,4 +1,6 @@
+// src/components/sections/ProjectsSection.jsx
 import { Box } from "@mui/material";
+import { projects } from "../../services/projectsData";
 import BentoSection from "../BentoSection";
 import ProjectCard from "../ProjectCard";
 
@@ -16,29 +18,22 @@ export default function ProjectsSection() {
           gap: 2.5,
         }}
       >
-        <ProjectCard
-          title="Innventory"
-          description="Hotel inventory management app with Supabase auth, low-stock email alerts, and responsive React UI."
-          tech={["React", "Supabase", "PostgreSQL", "Vercel"]}
-          linkLabel="View project"
-          href="#"
-        />
-
-        <ProjectCard
-          title="Dolphins Swim Academy"
-          description="Spring Boot/JTE web app to manage swim classes, sessions, and student enrollment."
-          tech={["Spring Boot", "JTE", "MySQL"]}
-          linkLabel="View project"
-          href="#"
-        />
-
-        <ProjectCard
-          title="Minesweeper Solver"
-          description="C++ + SFML backtracking visualizer that learns bomb configurations across boards."
-          tech={["C++", "SFML", "Algorithms"]}
-          linkLabel="View project"
-          href="#"
-        />
+        {projects.map((project) => (
+          <ProjectCard
+            key={project.id}
+            title={project.name}
+            description={project.shortDescription}
+            tech={project.techStack}
+            href={project.links.live || project.links.github}
+            linkLabel={
+              project.links.live
+                ? "View live"
+                : project.links.github
+                ? "View code"
+                : "Learn more"
+            }
+          />
+        ))}
       </Box>
     </BentoSection>
   );
