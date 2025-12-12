@@ -1,60 +1,21 @@
-/* OUTER HERO WRAPPER */
+/* FULL-BLEED HERO WRAPPER (break out of MUI Container) */
 .hero-section {
-  padding: 2rem 1.5rem;
-  display: flex;
-  justify-content: center;
-}
-
-/* MAIN HERO BENTO CARD */
-.hero-bento {
-  width: 100%;
-  max-width: 1000px;
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: 2fr 1.3fr;
-  grid-template-areas:
-    "image name"
-    "image role";
-}
-
-/* Shared card styling (mini-bentos) */
-.hero-bento-card {
-  border-radius: 1.5rem;
-  background: rgba(15, 15, 25, 0.9);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.25);
-  padding: 1.25rem 1.5rem;
-  color: white;
-}
-
-/* Assign grid areas */
-.hero-image-card {
-  grid-area: image;
-  padding: 0; /* image fills the card */
-  overflow: hidden;
   position: relative;
-  min-height: 260px;
-}
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
 
-.hero-name-card {
-  grid-area: name;
+  min-height: clamp(420px, 60vh, 720px);
+  border-radius: 0; /* full bleed */
+  overflow: hidden;
+
   display: flex;
-  align-items: flex-end;
-  justify-content: flex-start;
+  align-items: center;
 }
 
-.hero-role-card {
-  grid-area: role;
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-}
-
-/* Background slider INSIDE image card */
+/* Background slider */
 .hero-bg-slider {
   position: absolute;
   inset: 0;
-  overflow: hidden;
 }
 
 .hero-bg-slide {
@@ -62,60 +23,76 @@
   inset: 0;
   background-size: cover;
   background-position: center;
-  transform: translateX(100%);
+
   opacity: 0;
-  transition: transform 0.8s ease, opacity 0.8s ease;
+  transform: scale(1.03);
+  transition: opacity 900ms ease, transform 1200ms ease;
 }
 
 .hero-bg-slide.active {
-  transform: translateX(0);
   opacity: 1;
+  transform: scale(1);
 }
 
-/* Text styles */
+/* Dark overlay for readability */
+.hero-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(10, 10, 16, 0.78) 0%,
+    rgba(10, 10, 16, 0.55) 35%,
+    rgba(10, 10, 16, 0.15) 100%
+  );
+}
+
+/* Text overlay container */
+.hero-content {
+  position: relative;
+  z-index: 1;
+
+  width: min(1000px, calc(100% - 3rem));
+  margin-inline: auto;
+
+  padding: clamp(2rem, 6vw, 4.5rem) 0;
+
+  color: white;
+  text-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+}
+
 .hero-title {
-  font-size: clamp(2rem, 3vw, 3rem);
-  font-weight: 700;
   margin: 0;
+  font-size: clamp(2.4rem, 4.5vw, 4.25rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
 }
 
 .hero-subtitle {
-  font-size: clamp(1.4rem, 2.4vw, 2rem);
-  font-weight: 400;
-  margin: 0;
+  margin: 0.9rem 0 0;
+  font-size: clamp(1.25rem, 2.2vw, 2rem);
+  font-weight: 500;
+  opacity: 0.92;
 }
 
 .hero-role {
-  font-weight: 700;
+  font-weight: 800;
+  opacity: 1;
 }
 
-/* --------- MOBILE: stack cards into their own bento boxes --------- */
+/* Mobile readability */
 @media (max-width: 768px) {
-  .hero-bento {
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "image"
-      "name"
-      "role";
+  .hero-scrim {
+    background: linear-gradient(
+      180deg,
+      rgba(10, 10, 16, 0.72) 0%,
+      rgba(10, 10, 16, 0.55) 55%,
+      rgba(10, 10, 16, 0.35) 100%
+    );
   }
 
-  .hero-image-card {
-    min-height: 220px;
+  .hero-content {
+    width: calc(100% - 2rem);
+    padding: 3rem 0;
   }
-
-  .hero-name-card,
-  .hero-role-card {
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-  }
-}
-
-.hero-bento-outer {
-  width: 100%;
-  max-width: 1000px;
-  border-radius: 1.75rem;
-  border: 1px solid rgba(148, 163, 184, 0.2);
-  background: rgba(15, 15, 25, 0.9);
-  padding: 1.25rem;
 }
