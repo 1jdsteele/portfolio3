@@ -50,7 +50,7 @@ export default function HeroIntroSection() {
         </div>
 
         {/* NAME CARD */}
-        <div className="hero-bento-card hero-name-card">
+        <div className="hero-bento-card hero-name-card hero-content">
           <h1 className="hero-title">Hi, I&apos;m Jake Steele</h1>
         </div>
 
