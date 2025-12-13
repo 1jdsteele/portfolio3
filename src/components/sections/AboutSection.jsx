@@ -29,7 +29,7 @@ export default function AboutSection() {
       {/* Photo card: span 6 */}
       <BentoCard
         sx={{
-          gridColumn: { xs: "1 / -1", md: "span 8" },
+          gridColumn: { xs: "1 / -1", md: "span 4" },
           p: 0,
           overflow: "hidden",
         }}

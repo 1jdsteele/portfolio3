@@ -9,9 +9,9 @@ export default function SectionHeaderCard({
   return (
     <BentoCard
       sx={{
-        gridColumn,
+        gridColumn: { xs: "1 / -1", md: "span 4" },
         justifyContent: "space-between",
-        py: 5, // 🔑 key line
+        py: 5,
       }}
     >
       <Typography variant="h4" sx={{ fontWeight: 700 }}>

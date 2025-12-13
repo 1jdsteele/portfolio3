@@ -9,8 +9,20 @@ export default function ProjectCard({
   linkLabel,
 }) {
   return (
-    <BentoCard>
-      <Typography variant="subtitle1" sx={{ fontWeight: 600, mb: 1 }}>
+    <BentoCard
+      sx={{
+        gridColumn: { xs: "1 / -1", md: "span 4" },
+        justifyContent: "space-between",
+        py: 5,
+      }}
+    >
+      <Typography
+        variant="subtitle1"
+        sx={{
+          fontWeight: 600,
+          mb: 1,
+        }}
+      >
         {title}
       </Typography>
 
