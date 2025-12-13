@@ -1,40 +1,40 @@
 // src/components/sections/ProjectsSection.jsx
-import { Box } from "@mui/material";
 import { projects } from "../../services/projectsData";
 import BentoSection from "../BentoSection";
 import ProjectCard from "../ProjectCard";
+import SectionHeaderCard from "../SectionHeaderCard";
 
 export default function ProjectsSection() {
   return (
-    <BentoSection
-      id="projects"
-      title="Projects"
-      subtitle="A few things I’ve been building lately"
-    >
-      <Box
-        sx={{
-          display: "grid",
-          gridTemplateColumns: { xs: "1fr", md: "repeat(3, minmax(0, 1fr))" },
-          gap: 2.5,
-        }}
-      >
-        {projects.map((project) => (
-          <ProjectCard
-            key={project.id}
-            title={project.name}
-            description={project.shortDescription}
-            tech={project.techStack}
-            href={project.links.live || project.links.github}
-            linkLabel={
-              project.links.live
-                ? "View live"
-                : project.links.github
-                ? "View code"
-                : "Learn more"
-            }
-          />
-        ))}
-      </Box>
+    <BentoSection id="projects">
+      <SectionHeaderCard
+        title="Projects"
+        subtitle="A few things I’ve been building lately"
+        // gridColumn={{ xs: "1 / -1", md: "span " }}
+      />
+
+      {projects.map((project) => (
+        <ProjectCard
+          // TO DO : PROBABLY CHANGE PROJECT CARDS AS A CHILD OF BENTO CARDS???
+          // sx={{
+          //   gridColumn: { xs: "1 / -1", md: "span 4" },
+          //   p: 0,
+          //   overflow: "hidden",
+          // }}
+          key={project.id}
+          title={project.name}
+          description={project.shortDescription}
+          tech={project.techStack}
+          href={project.links.live || project.links.github}
+          linkLabel={
+            project.links.live
+              ? "View live"
+              : project.links.github
+              ? "View code"
+              : "Learn more"
+          }
+        />
+      ))}
     </BentoSection>
   );
 }
