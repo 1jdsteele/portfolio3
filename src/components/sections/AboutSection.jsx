@@ -26,31 +26,8 @@ export default function AboutSection() {
         // gridColumn={{ xs: "1 / -1", md: "span " }}
       />
 
-      {/* Photo card: span 6 */}
-      <BentoCard
-        sx={{
-          gridColumn: { xs: "1 / -1", md: "span 4" },
-          p: 0,
-          overflow: "hidden",
-        }}
-      >
-        <Box
-          component="img"
-          src={headshot}
-          alt="Jake"
-          sx={{
-            width: "100%",
-            height: 320, // key: controls the photo’s “dominance”
-            objectFit: "cover",
-            borderRadius: "inherit",
-            display: "block",
-            // transform: "scale(0.5)",
-          }}
-        />
-      </BentoCard>
-
       {/* Three small cards: span 4 each */}
-      <BentoCard
+      {/* <BentoCard
         sx={{
           gridColumn: { xs: "1 / -1", md: "span 4" },
           justifyContent: "center",
@@ -81,12 +58,62 @@ export default function AboutSection() {
         <Typography variant="h6" sx={{ fontWeight: 700 }}>
           Los Angeles
         </Typography>
+      </BentoCard> */}
+      {/* Right-side vertical stack: span 4 */}
+      <Box
+        sx={{
+          gridColumn: { xs: "1 / -1", sm: "span 3", md: "span 4" },
+          display: "flex",
+          flexDirection: "column",
+          gap: 2.5,
+        }}
+      >
+        <BentoCard sx={{ py: 1.75, justifyContent: "center", gap: 2 }}>
+          <Typography variant="h6" sx={{ fontWeight: 700 }}>
+            CS grad student
+          </Typography>
+        </BentoCard>
+
+        <BentoCard sx={{ py: 1.75, justifyContent: "center", gap: 2 }}>
+          <Typography variant="h6" sx={{ fontWeight: 700 }}>
+            Full-stack irl dev
+          </Typography>
+        </BentoCard>
+
+        <BentoCard sx={{ py: 1.75, justifyContent: "center", gap: 2 }}>
+          <Typography variant="h6" sx={{ fontWeight: 700 }}>
+            Los Angeles
+          </Typography>
+        </BentoCard>
+      </Box>
+
+      {/* Photo card: span 6 */}
+      <BentoCard
+        sx={{
+          gridColumn: { xs: "1 / -1", sm: "span 3", md: "span 4" },
+          p: 0,
+          overflow: "hidden",
+        }}
+      >
+        <Box
+          component="img"
+          src={headshot}
+          alt="Jake"
+          sx={{
+            width: "100%",
+            height: 320, // key: controls the photo’s “dominance”
+            objectFit: "cover",
+            borderRadius: "inherit",
+            display: "block",
+            // transform: "scale(0.5)",
+          }}
+        />
       </BentoCard>
 
       {/* Main text + skills: 8/4 split */}
       <BentoCard
         sx={{
-          gridColumn: { xs: "1 / -1", md: "span 8" },
+          gridColumn: { xs: "1 / -1", sm: "span 3", md: "span 8" },
           justifyContent: "flex-start",
         }}
       >
@@ -105,7 +132,7 @@ export default function AboutSection() {
 
       <BentoCard
         sx={{
-          gridColumn: { xs: "1 / -1", md: "span 4" },
+          gridColumn: { xs: "1 / -1", sm: "span 3", md: "span 4" },
           // justifyContent: "flex-start",
           justifyContent: "space-between",
           py: 2.5,
