@@ -6,7 +6,7 @@ import SectionHeaderCard from "../SectionHeaderCard";
 
 export default function ProjectsSection() {
   return (
-    <BentoSection id="projects" tone="rose">
+    <BentoSection id="projects" tone="emerald">
       <SectionHeaderCard
         title="Projects"
         subtitle="A few things I’ve been building lately"
