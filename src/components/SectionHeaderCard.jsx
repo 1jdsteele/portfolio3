@@ -4,6 +4,7 @@ import BentoCard from "./BentoCard";
 export default function SectionHeaderCard({
   title,
   subtitle,
+  //in cleanup, I am pretty sure I no longer use this and can delete
   gridColumn = { xs: "1 / -1", md: "span 4" },
 }) {
   return (

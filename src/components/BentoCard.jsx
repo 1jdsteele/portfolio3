@@ -1,29 +1,3 @@
-// import { Paper } from "@mui/material";
-
-// export default function BentoCard({ children, sx = {}, ...rest }) {
-//   return (
-//     <Paper
-//       variant="outlined"
-//       sx={{
-//         p: 2,
-//         height: "100%",
-//         borderRadius: 3,
-
-//         // section-scoped theming (with fallbacks)
-//         bgcolor: "var(--bento-card-bg, rgba(15,23,42,0.85))",
-//         borderColor: "var(--bento-outline, rgba(148,163,184,0.3))",
-//         display: "flex",
-//         flexDirection: "column",
-//         justifyContent: "space-between",
-//         ...sx,
-//       }}
-//       {...rest}
-//     >
-//       {children}
-//     </Paper>
-//   );
-// }
-
 import { Paper } from "@mui/material";
 
 export default function BentoCard({ children, sx = {}, ...rest }) {
@@ -42,7 +16,7 @@ export default function BentoCard({ children, sx = {}, ...rest }) {
         flexDirection: "column",
         justifyContent: "space-between",
 
-        // ✨ hover polish
+        // hover polish
         transition:
           "transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease, border-color 180ms ease",
         willChange: "transform",

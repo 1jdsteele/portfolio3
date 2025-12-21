@@ -9,7 +9,6 @@ export default function ResumeSection() {
       <SectionHeaderCard
         title="Resume"
         subtitle="Quick snapshot + a link to the full PDF"
-        // gridColumn={{ xs: "1 / -1", md: "span " }}
       />
       {/* Summary / what I'm looking for */}
       <BentoCard

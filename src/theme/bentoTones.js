@@ -1,4 +1,3 @@
-// src/theme/bentoTones.js
 export const BENTO_TONES = {
   slate: {
     sectionBg: "rgba(15, 23, 42, 0.62)",
@@ -63,7 +62,6 @@ export const BENTO_TONES = {
 
 export const DEFAULT_BENTO_TONE = "slate";
 
-// Optional helper if you want a safe getter
 export function getBentoTone(tone) {
   return BENTO_TONES[tone] ?? BENTO_TONES[DEFAULT_BENTO_TONE];
 }

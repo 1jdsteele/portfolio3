@@ -26,39 +26,6 @@ export default function AboutSection() {
         // gridColumn={{ xs: "1 / -1", md: "span " }}
       />
 
-      {/* Three small cards: span 4 each */}
-      {/* <BentoCard
-        sx={{
-          gridColumn: { xs: "1 / -1", md: "span 4" },
-          justifyContent: "center",
-        }}
-      >
-        <Typography variant="h6" sx={{ fontWeight: 700 }}>
-          CS grad student
-        </Typography>
-      </BentoCard>
-
-      <BentoCard
-        sx={{
-          gridColumn: { xs: "1 / -1", md: "span 4" },
-          justifyContent: "center",
-        }}
-      >
-        <Typography variant="h6" sx={{ fontWeight: 700 }}>
-          Full-stack irl dev
-        </Typography>
-      </BentoCard>
-
-      <BentoCard
-        sx={{
-          gridColumn: { xs: "1 / -1", md: "span 4" },
-          justifyContent: "center",
-        }}
-      >
-        <Typography variant="h6" sx={{ fontWeight: 700 }}>
-          Los Angeles
-        </Typography>
-      </BentoCard> */}
       {/* Right-side vertical stack: span 4 */}
       <Box
         sx={{
@@ -111,7 +78,7 @@ export default function AboutSection() {
         />
       </BentoCard>
 
-      {/* Main text + skills: 8/4 split */}
+      {/* Main text + skills: */}
       <BentoCard
         sx={{
           gridColumn: { xs: "1 / -1", sm: "span 3", md: "span 8" },
