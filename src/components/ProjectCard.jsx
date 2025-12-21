@@ -11,7 +11,7 @@ export default function ProjectCard({
   return (
     <BentoCard
       sx={{
-        gridColumn: { xs: "1 / -1", md: "span 4" },
+        gridColumn: { xs: "1 / -1", sm: "span 3", md: "span 4" },
         justifyContent: "space-between",
         py: 5,
       }}

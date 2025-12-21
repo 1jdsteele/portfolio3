@@ -10,17 +10,14 @@ export default function ProjectsSection() {
       <SectionHeaderCard
         title="Projects"
         subtitle="A few things I’ve been building lately"
-        // gridColumn={{ xs: "1 / -1", md: "span " }}
+        // TO DO: change JUST this header card to half size
+        // sx={{
+        //   gridColumn: { xs: "1 / -1", sm: "span 3", md: "span 4" },
+        // }}
       />
 
       {projects.map((project) => (
         <ProjectCard
-          // TO DO : PROBABLY CHANGE PROJECT CARDS AS A CHILD OF BENTO CARDS???
-          // sx={{
-          //   gridColumn: { xs: "1 / -1", md: "span 4" },
-          //   p: 0,
-          //   overflow: "hidden",
-          // }}
           key={project.id}
           title={project.name}
           description={project.shortDescription}
