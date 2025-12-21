@@ -3,13 +3,7 @@
   position: relative;
   width: 100vw;
   margin-left: calc(50% - 50vw);
-
-  min-height: clamp(420px, 60vh, 720px);
-  border-radius: 0; /* full bleed */
   overflow: hidden;
-
-  display: flex;
-  align-items: center;
 }
 
 /* Background slider */
@@ -75,13 +69,51 @@
   opacity: 0.92;
 }
 
-.hero-role {
-  font-weight: 800;
-  opacity: 1;
+.hero-bento {
+  position: relative;
+  width: 100%;
+  height: clamp(420px, 60vh, 720px); /* ✅ explicit height */
+  overflow: hidden;
 }
 
-/* Mobile readability */
-@media (max-width: 768px) {
+.hero-image-card {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-bento-text {
+  position: absolute; /* ✅ overlay that fills the hero */
+  inset: 0;
+  z-index: 1;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+
+  padding: clamp(1.5rem, 6vw, 4rem);
+  color: white;
+  text-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+}
+
+/* NAME: top-right */
+.hero-name-block {
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: end;
+  align-self: start;
+  text-align: right;
+}
+
+/* ROLE: bottom-left */
+.hero-role-block {
+  grid-column: 1;
+  grid-row: 2;
+  justify-self: start;
+  align-self: end;
+  text-align: left;
+}
+
+/* Mobile readability @media (max-width: 768px) {
   .hero-scrim {
     background: linear-gradient(
       180deg,
@@ -90,9 +122,8 @@
       rgba(10, 10, 16, 0.35) 100%
     );
   }
+} */
 
-  .hero-content {
-    width: calc(100% - 2rem);
-    padding: 3rem 0;
-  }
+.hero-scrim {
+  display: none;
 }

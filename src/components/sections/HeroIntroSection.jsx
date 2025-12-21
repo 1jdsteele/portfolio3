@@ -21,7 +21,7 @@ export default function HeroIntroSection() {
   useEffect(() => {
     const interval = setInterval(() => {
       setRoleIndex((prev) => (prev + 1) % roles.length);
-    }, 2000);
+    }, 6000);
     return () => clearInterval(interval);
   }, []);
 
@@ -47,18 +47,21 @@ export default function HeroIntroSection() {
               />
             ))}
           </div>
+          <div className="hero-scrim" />
         </div>
 
-        {/* NAME CARD */}
-        <div className="hero-bento-card hero-name-card hero-content">
-          <h1 className="hero-title">Hi, I&apos;m Jake Steele</h1>
-        </div>
+        <div className="hero-bento-text">
+          {/* LEFT: ROLE */}
+          <div className="hero-role-block">
+            <h2 className="hero-subtitle">
+              I am <span className="hero-role">{roles[roleIndex]}</span>
+            </h2>
+          </div>
 
-        {/* ROLE CARD */}
-        <div className="hero-bento-card hero-role-card">
-          <h2 className="hero-subtitle">
-            I am <span className="hero-role">{roles[roleIndex]}</span>
-          </h2>
+          {/* RIGHT: NAME */}
+          <div className="hero-name-block">
+            <h1 className="hero-title">Hi, I&apos;m Jake Steele</h1>
+          </div>
         </div>
       </div>
     </section>
