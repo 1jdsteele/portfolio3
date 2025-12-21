@@ -15,7 +15,7 @@ export default function ContactSection() {
       {/* Blurb card */}
       <BentoCard
         sx={{
-          gridColumn: { xs: "1 / -1", md: "span 4" },
+          gridColumn: { xs: "1 / -1", sm: "span 3", md: "span 4" },
           justifyContent: "center",
         }}
       >
@@ -29,7 +29,7 @@ export default function ContactSection() {
       {/* Links card */}
       <BentoCard
         sx={{
-          gridColumn: { xs: "1 / -1", md: "span 4" },
+          gridColumn: { xs: "1 / -1", sm: "span 3", md: "span 4" },
           justifyContent: "center",
         }}
       >

@@ -14,7 +14,7 @@ export default function ResumeSection() {
       {/* Summary / what I'm looking for */}
       <BentoCard
         sx={{
-          gridColumn: { xs: "1 / -1", md: "span 4" },
+          gridColumn: { xs: "1 / -1", sm: "span 3", md: "span 4" },
           justifyContent: "center",
         }}
       >
@@ -30,7 +30,7 @@ export default function ResumeSection() {
       {/* Quick link card */}
       <BentoCard
         sx={{
-          gridColumn: { xs: "1 / -1", md: "span 4" },
+          gridColumn: { xs: "1 / -1", sm: "span 3", md: "span 4" },
           justifyContent: "center",
         }}
       >
