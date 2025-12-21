@@ -57,7 +57,12 @@ export default function BentoSection({
   };
 
   return (
-    <Box id={id}>
+    <Box
+      id={id}
+      sx={{
+        scrollMarginTop: { xs: "84px", md: "96px" }, // tweak these
+      }}
+    >
       {/* very certain I no longer use, can delete in clean up*/}
       {(title || subtitle) && (
         <Stack spacing={0.5} sx={{ mb: 2 }}>
