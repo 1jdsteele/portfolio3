@@ -113,6 +113,11 @@
   text-align: left;
 }
 
+.hero-role {
+  font-weight: 800;
+  opacity: 1;
+}
+
 /* Mobile readability @media (max-width: 768px) {
   .hero-scrim {
     background: linear-gradient(
