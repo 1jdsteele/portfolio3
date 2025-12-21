@@ -37,7 +37,19 @@ export default function ProjectCard({
       </Stack>
 
       {href && (
-        <MuiLink href={href} underline="hover">
+        <MuiLink
+          href={href}
+          underline="hover"
+          sx={{
+            color: "var(--bento-link)",
+            textDecorationColor:
+              "color-mix(in srgb, var(--bento-link) 50%, transparent)",
+            "&:hover": {
+              color: "var(--bento-link-hover)",
+              textDecorationColor: "var(--bento-link-hover)",
+            },
+          }}
+        >
           {linkLabel}
         </MuiLink>
       )}

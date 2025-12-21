@@ -52,7 +52,7 @@ export default function ResumeSection() {
       {/* Highlights card */}
       <BentoCard
         sx={{
-          gridColumn: { xs: "1 / -1", md: "span 4" },
+          gridColumn: { xs: "1 / -1", sm: "span 6", md: "span 8" },
           justifyContent: "center",
         }}
       >
