@@ -18,6 +18,16 @@ export default function BentoCard({ children, sx = {}, ...rest }) {
         justifyContent: "space-between",
 
         gap: 1.25,
+        backdropFilter: "blur(10px)",
+        WebkitBackdropFilter: "blur(10px)",
+
+        backgroundImage:
+          "linear-gradient(180deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 55%, rgba(255,255,255,0) 100%)",
+
+        "&:hover": {
+          backgroundImage:
+            "linear-gradient(180deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.03) 55%, rgba(255,255,255,0) 100%)",
+        },
 
         ...bentoHoverMotion,
         ...sx,
