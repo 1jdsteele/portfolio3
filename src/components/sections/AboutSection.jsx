@@ -18,7 +18,7 @@ const skills = [
 
 export default function AboutSection() {
   return (
-    <BentoSection id="about">
+    <BentoSection id="about" tone="indigo">
       {/* Header card: span 6 */}
       <SectionHeaderCard
         title="About me"
@@ -66,6 +66,7 @@ export default function AboutSection() {
           display: "flex",
           flexDirection: "column",
           gap: 2.5,
+          textAlign: "center",
         }}
       >
         <BentoCard sx={{ py: 1.75, justifyContent: "center", gap: 2 }}>

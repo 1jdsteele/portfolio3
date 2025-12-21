@@ -5,7 +5,7 @@ import SectionHeaderCard from "../SectionHeaderCard";
 
 export default function ResumeSection() {
   return (
-    <BentoSection id="resume">
+    <BentoSection id="resume" tone="emerald">
       <SectionHeaderCard
         title="Resume"
         subtitle="Quick snapshot + a link to the full PDF"
