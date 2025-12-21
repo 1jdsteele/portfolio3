@@ -28,9 +28,12 @@ export default function BentoSection({ title, subtitle, children, id }) {
           borderRadius: 4,
           border: "1px solid rgba(148,163,184,0.2)",
 
-          // ✅ make bento layout actually work
           display: "grid",
-          gridTemplateColumns: { xs: "1fr", md: "repeat(12, minmax(0, 1fr))" },
+          gridTemplateColumns: {
+            xs: "1fr",
+            sm: "repeat(6, minmax(0, 1fr))",
+            md: "repeat(12, minmax(0, 1fr))",
+          },
           gap: { xs: 2, md: 2.5 },
           alignItems: "stretch",
         }}
