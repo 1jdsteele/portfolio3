@@ -8,7 +8,8 @@ import {
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import React, { useEffect, useMemo, useState } from "react";
-import { getBentoTone } from "../theme/bentoTones";
+import { bentoHoverMotion } from "../styles/bentoMotions";
+import { getBentoTone } from "../styles/bentoTones";
 
 export default function BentoSection({
   title,
@@ -108,6 +109,8 @@ export default function BentoSection({
 
           bgcolor: "var(--bento-section-bg)",
           border: "1px solid var(--bento-outline)",
+
+          ...bentoHoverMotion,
         }}
       >
         {/* HEADER (always visible) */}

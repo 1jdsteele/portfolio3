@@ -1,4 +1,5 @@
 import { Paper } from "@mui/material";
+import { bentoHoverMotion } from "../styles/bentoMotions";
 
 export default function BentoCard({ children, sx = {}, ...rest }) {
   return (
@@ -16,26 +17,9 @@ export default function BentoCard({ children, sx = {}, ...rest }) {
         flexDirection: "column",
         justifyContent: "space-between",
 
-        // hover polish
-        transition:
-          "transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease, border-color 180ms ease",
-        willChange: "transform",
+        gap: 1.25,
 
-        "&:hover": {
-          transform: "translateY(-2px)",
-          bgcolor: "var(--bento-card-hover-bg, rgba(15,23,42,0.92))",
-          borderColor: "var(--bento-card-hover-outline, rgba(148,163,184,0.4))",
-          boxShadow: "0 18px 40px rgba(0,0,0,0.25)",
-        },
-
-        "&:active": { transform: "translateY(-1px)" },
-
-        // accessibility: don’t animate for users who prefer reduced motion
-        "@media (prefers-reduced-motion: reduce)": {
-          transition: "none",
-          "&:hover": { transform: "none" },
-        },
-
+        ...bentoHoverMotion,
         ...sx,
       }}
       {...rest}
