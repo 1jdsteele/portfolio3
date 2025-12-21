@@ -12,6 +12,7 @@ export default function SectionHeaderCard({
         gridColumn: { xs: "1 / -1", sm: "span 6", md: "span 4" },
         justifyContent: "space-between",
         py: 5,
+        textAlign: { xs: "center", sm: "center", md: "left" },
       }}
     >
       <Typography variant="h4" sx={{ fontWeight: 700 }}>
