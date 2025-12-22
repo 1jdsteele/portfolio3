@@ -5,8 +5,7 @@ export default function ProjectCard({
   title,
   description,
   tech = [],
-  href,
-  linkLabel,
+  links = [],
 }) {
   return (
     <BentoCard
@@ -16,13 +15,7 @@ export default function ProjectCard({
         py: 5,
       }}
     >
-      <Typography
-        variant="subtitle1"
-        sx={{
-          fontWeight: 600,
-          mb: 1,
-        }}
-      >
+      <Typography variant="subtitle1" sx={{ fontWeight: 600, mb: 1 }}>
         {title}
       </Typography>
 
@@ -36,22 +29,29 @@ export default function ProjectCard({
         ))}
       </Stack>
 
-      {href && (
-        <MuiLink
-          href={href}
-          underline="hover"
-          sx={{
-            color: "var(--bento-link)",
-            textDecorationColor:
-              "color-mix(in srgb, var(--bento-link) 50%, transparent)",
-            "&:hover": {
-              color: "var(--bento-link-hover)",
-              textDecorationColor: "var(--bento-link-hover)",
-            },
-          }}
-        >
-          {linkLabel}
-        </MuiLink>
+      {links.length > 0 && (
+        <Stack direction="row" spacing={2} flexWrap="wrap">
+          {links.map((link) => (
+            <MuiLink
+              key={link.href + link.label}
+              href={link.href}
+              // underline="hover"
+              target="_blank"
+              rel="noreferrer"
+              sx={{
+                color: "var(--bento-link)",
+                textDecorationColor:
+                  "color-mix(in srgb, var(--bento-link) 50%, transparent)",
+                "&:hover": {
+                  color: "var(--bento-link-hover)",
+                  textDecorationColor: "var(--bento-link-hover)",
+                },
+              }}
+            >
+              {link.label}
+            </MuiLink>
+          ))}
+        </Stack>
       )}
     </BentoCard>
   );

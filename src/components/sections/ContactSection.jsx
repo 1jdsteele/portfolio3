@@ -20,9 +20,7 @@ export default function ContactSection() {
         }}
       >
         <Typography variant="body1">
-          The best way to reach me is via email. I’m always open to chatting
-          about internships, research opportunities, or building something weird
-          and useful.
+          The best way to reach me is via email.
         </Typography>
       </BentoCard>
 
@@ -54,7 +52,7 @@ export default function ContactSection() {
           <Typography variant="body2">
             GitHub:{" "}
             <MuiLink
-              href="https://github.com/YOUR_GITHUB"
+              href="https://github.com/1jdsteele?tab=repositories"
               target="_blank"
               rel="noreferrer"
               sx={{
@@ -67,13 +65,13 @@ export default function ContactSection() {
                 },
               }}
             >
-              JAKE PUT GH LINK HERE
+              1jdsteele
             </MuiLink>
           </Typography>
           <Typography variant="body2">
             LinkedIn:{" "}
             <MuiLink
-              href="https://www.linkedin.com/in/YOUR_LINKEDIN/"
+              href="https://www.linkedin.com/in/1jdsteele/"
               target="_blank"
               rel="noreferrer"
               sx={{
@@ -86,7 +84,7 @@ export default function ContactSection() {
                 },
               }}
             >
-              JAKE PUT LINKED IN LINK HJERE
+              Jake Steele
             </MuiLink>
           </Typography>
         </Stack>
