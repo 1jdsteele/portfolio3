@@ -87,3 +87,25 @@ button:focus-visible {
     opacity: 1;
   }
 }
+
+/* breakpoint reflows feel intentional */
+.resize-settle {
+  animation: resizeSettle 220ms ease;
+}
+
+@keyframes resizeSettle {
+  from {
+    opacity: 0.94;
+    filter: blur(0.2px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .resize-settle {
+    animation: none;
+  }
+}

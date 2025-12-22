@@ -31,6 +31,8 @@ export default function BentoCard({ children, sx = {}, ...rest }) {
 
         ...bentoHoverMotion,
         ...sx,
+        contentVisibility: "auto",
+        containIntrinsicSize: "280px",
       }}
       {...rest}
     >

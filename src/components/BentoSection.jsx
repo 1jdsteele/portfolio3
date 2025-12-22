@@ -9,6 +9,7 @@ import {
 import { useTheme } from "@mui/material/styles";
 import React, { useEffect, useMemo, useState } from "react";
 import useInView from "../hooks/useInView";
+import useResizeSettleClass from "../hooks/useResizeSettleClass";
 import { bentoHoverMotion } from "../styles/bentoMotions";
 import { getBentoTone } from "../styles/bentoTones";
 
@@ -27,6 +28,8 @@ export default function BentoSection({
     threshold: 0.05,
     rootMargin: "0px 0px -2% 0px",
   });
+
+  const resizePulse = useResizeSettleClass(220);
 
   const theme = useTheme();
   const isXs = useMediaQuery(theme.breakpoints.down("sm")); // < 600px
@@ -91,7 +94,7 @@ export default function BentoSection({
 
       <Paper
         ref={revealRef}
-        // className={`reveal ${inView ? "in-view" : ""}`}
+        className={`resize-settle ${resizePulse}`}
         elevation={2}
         sx={{
           p: { xs: 2, md: 3 },
@@ -143,7 +146,7 @@ export default function BentoSection({
 
           // make sure opacity is included for reveal transition
           transition:
-            "opacity 900ms ease, transform 520ms ease, background-color 200ms ease, border-color 200ms ease, box-shadow 260ms ease",
+            "opacity 900ms ease, transform 520ms ease, background-color 200ms ease, border-color 200ms ease, box-shadow 260ms ease, padding 240ms ease, gap 240ms ease, border-radius 240ms ease",
 
           "@media (prefers-reduced-motion: reduce)": {
             transition: "none",
