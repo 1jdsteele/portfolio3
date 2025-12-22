@@ -1,5 +1,26 @@
 export const projects = [
   {
+    id: "competitive-pokemon-catalog",
+    name: "Competitive Pokemon Catalog",
+    shortDescription:
+      "Classic web Javascript, HTML, CSS project. Reads an internal JSON of hand curated Pokemon most important to the current competitive game.",
+    role: "Solo Project",
+    techStack: ["JavaScript", "HTML", "CSS"],
+    year: 2025,
+    highlight:
+      "I love that AI can help me with styling - I always feel like I struggle with that.",
+    links: [
+      {
+        label: "Code",
+        href: "https://github.com/1jdsteele/steele_snapCatalog",
+      },
+      {
+        label: "Live",
+        href: "https://1jdsteele.github.io/steele_snapCatalog/",
+      },
+    ],
+  },
+  {
     id: "innventory",
     name: "Innventory",
     shortDescription:
