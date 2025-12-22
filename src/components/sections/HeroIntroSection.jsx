@@ -22,7 +22,7 @@ export default function HeroIntroSection() {
   useEffect(() => {
     const interval = setInterval(() => {
       setRoleIndex((prev) => (prev + 1) % roles.length);
-    }, 6000);
+    }, 5000);
     return () => clearInterval(interval);
   }, []);
 
@@ -30,7 +30,7 @@ export default function HeroIntroSection() {
   useEffect(() => {
     const interval = setInterval(() => {
       setImgIndex((prev) => (prev + 1) % heroImages.length);
-    }, 10000);
+    }, 13000);
     return () => clearInterval(interval);
   }, []);
 
