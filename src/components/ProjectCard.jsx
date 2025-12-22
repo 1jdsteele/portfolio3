@@ -16,6 +16,7 @@ export default function ProjectCard({
         py: 5,
       }}
     >
+      {/* TITLE */}
       <Typography
         variant="subtitle1"
         sx={{
@@ -26,16 +27,19 @@ export default function ProjectCard({
         {title}
       </Typography>
 
+      {/* DESCRIPTION */}
       <Typography variant="body2" sx={{ mb: 1.5, opacity: 0.85 }}>
         {description}
       </Typography>
 
+      {/* STACK */}
       <Stack direction="row" flexWrap="wrap" gap={0.5} sx={{ mb: 1.5 }}>
         {tech.map((t) => (
           <Chip key={t} label={t} size="small" />
         ))}
       </Stack>
 
+      {/* LINKS */}
       {href && (
         <MuiLink
           href={href}

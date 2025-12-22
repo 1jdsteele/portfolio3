@@ -91,23 +91,28 @@ export default function AboutSection() {
       <BentoCard
         sx={{
           gridColumn: { xs: "1 / -1", sm: "span 3", md: "span 8" },
-          justifyContent: {
-            xs: "flex-start",
-            md: "center",
-          },
         }}
       >
-        <Typography variant="body1" sx={{ mb: 2 }}>
-          I’m Jake, a CS grad student interested in how real systems are
-          designed, built, and maintained. I enjoy full-stack development where
-          clean architecture meets business impact.
-        </Typography>
-        <Typography variant="body1">
-          I’ve worked on cross-disciplinary teams at AppFolio and Snapchat,
-          shipping revenue-driving features and prototyping new ideas. Most
-          recently, I led a team building a full-stack hotel inventory web
-          application from the ground up.
-        </Typography>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: { xs: "flex-start", md: "center" },
+            height: "100%",
+          }}
+        >
+          <Typography variant="body1" sx={{ mb: 2 }}>
+            I’m Jake, a CS grad student interested in how real systems are
+            designed, built, and maintained. I enjoy full-stack development
+            where clean architecture meets business impact.
+          </Typography>
+          <Typography variant="body1">
+            I’ve worked on cross-disciplinary teams at AppFolio and Snapchat,
+            shipping revenue-driving features and prototyping new ideas. Most
+            recently, I led a team building a full-stack hotel inventory web
+            application from the ground up.
+          </Typography>
+        </Box>
       </BentoCard>
 
       <BentoCard
