@@ -11,12 +11,12 @@ export const projects = [
       "I love that AI can help me with styling - I always feel like I struggle with that.",
     links: [
       {
-        label: "Code",
-        href: "https://github.com/1jdsteele/steele_snapCatalog",
-      },
-      {
         label: "Live",
         href: "https://1jdsteele.github.io/steele_snapCatalog/",
+      },
+      {
+        label: "Code",
+        href: "https://github.com/1jdsteele/steele_snapCatalog",
       },
     ],
   },
