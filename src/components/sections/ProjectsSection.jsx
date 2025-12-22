@@ -6,14 +6,10 @@ import SectionHeaderCard from "../SectionHeaderCard";
 
 export default function ProjectsSection() {
   return (
-    <BentoSection id="projects">
+    <BentoSection id="projects" tone="emerald">
       <SectionHeaderCard
         title="Projects"
         subtitle="A few things I’ve been building lately"
-        // TO DO: change JUST this header card to half size
-        // sx={{
-        //   gridColumn: { xs: "1 / -1", sm: "span 3", md: "span 4" },
-        // }}
       />
 
       {projects.map((project) => (

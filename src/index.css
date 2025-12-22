@@ -66,3 +66,46 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+/* scroll reveal for sections */
+.reveal {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 350ms ease, transform 450ms ease;
+  will-change: opacity, transform;
+}
+
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    transition: none;
+    transform: none;
+    opacity: 1;
+  }
+}
+
+/* breakpoint reflows feel intentional */
+.resize-settle {
+  animation: resizeSettle 220ms ease;
+}
+
+@keyframes resizeSettle {
+  from {
+    opacity: 0.94;
+    filter: blur(0.2px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .resize-settle {
+    animation: none;
+  }
+}

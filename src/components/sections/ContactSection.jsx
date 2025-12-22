@@ -5,7 +5,7 @@ import SectionHeaderCard from "../SectionHeaderCard";
 
 export default function ContactSection() {
   return (
-    <BentoSection id="contact">
+    <BentoSection id="contact" tone="rose">
       <SectionHeaderCard
         title="Contact"
         subtitle="Let’s talk about internships, collaborations, or fun side projects"
@@ -36,7 +36,18 @@ export default function ContactSection() {
         <Stack spacing={1}>
           <Typography variant="body2">
             Email:{" "}
-            <MuiLink href="mailto:jdsteeleprofessional@gmail.com">
+            <MuiLink
+              href="mailto:jdsteeleprofessional@gmail.com"
+              sx={{
+                color: "var(--bento-link)",
+                textDecorationColor:
+                  "color-mix(in srgb, var(--bento-link) 50%, transparent)",
+                "&:hover": {
+                  color: "var(--bento-link-hover)",
+                  textDecorationColor: "var(--bento-link-hover)",
+                },
+              }}
+            >
               jdsteeleprofessional@gmail.com
             </MuiLink>
           </Typography>
@@ -46,6 +57,15 @@ export default function ContactSection() {
               href="https://github.com/YOUR_GITHUB"
               target="_blank"
               rel="noreferrer"
+              sx={{
+                color: "var(--bento-link)",
+                textDecorationColor:
+                  "color-mix(in srgb, var(--bento-link) 50%, transparent)",
+                "&:hover": {
+                  color: "var(--bento-link-hover)",
+                  textDecorationColor: "var(--bento-link-hover)",
+                },
+              }}
             >
               JAKE PUT GH LINK HERE
             </MuiLink>
@@ -56,6 +76,15 @@ export default function ContactSection() {
               href="https://www.linkedin.com/in/YOUR_LINKEDIN/"
               target="_blank"
               rel="noreferrer"
+              sx={{
+                color: "var(--bento-link)",
+                textDecorationColor:
+                  "color-mix(in srgb, var(--bento-link) 50%, transparent)",
+                "&:hover": {
+                  color: "var(--bento-link-hover)",
+                  textDecorationColor: "var(--bento-link-hover)",
+                },
+              }}
             >
               JAKE PUT LINKED IN LINK HJERE
             </MuiLink>

@@ -5,11 +5,10 @@ import SectionHeaderCard from "../SectionHeaderCard";
 
 export default function ResumeSection() {
   return (
-    <BentoSection id="resume">
+    <BentoSection id="resume" tone="slate">
       <SectionHeaderCard
         title="Resume"
         subtitle="Quick snapshot + a link to the full PDF"
-        // gridColumn={{ xs: "1 / -1", md: "span " }}
       />
       {/* Summary / what I'm looking for */}
       <BentoCard
@@ -52,7 +51,7 @@ export default function ResumeSection() {
       {/* Highlights card */}
       <BentoCard
         sx={{
-          gridColumn: { xs: "1 / -1", md: "span 4" },
+          gridColumn: { xs: "1 / -1", sm: "span 6", md: "span 8" },
           justifyContent: "center",
         }}
       >

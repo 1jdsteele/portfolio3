@@ -1,4 +1,5 @@
 import { AppBar, Box, Button, Toolbar, Typography } from "@mui/material";
+import { useEffect, useState } from "react";
 import useScrollToSection from "../hooks/useScrollToSection";
 
 const sections = [
@@ -11,31 +12,156 @@ const sections = [
 export default function Header() {
   const { scrollToSection } = useScrollToSection();
 
+  const [scrolled, setScrolled] = useState(false);
+  const [activeId, setActiveId] = useState(null);
+
+  /* ----------------------------------
+     1. Scroll state (shadow + bg)
+  ---------------------------------- */
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  /* ----------------------------------
+     2. Active section tracking
+  ---------------------------------- */
+  useEffect(() => {
+    const ids = sections.map((s) => s.id);
+    const lastId = ids[ids.length - 1];
+
+    const observers = [];
+
+    ids.forEach((id) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) setActiveId(id);
+        },
+        {
+          rootMargin: "-45% 0px -45% 0px",
+          threshold: 0,
+        }
+      );
+
+      observer.observe(el);
+      observers.push(observer);
+    });
+
+    //bottom-of-page override (fixes the last section)
+    const onScroll = () => {
+      const nearBottom =
+        window.innerHeight + window.scrollY >=
+        document.documentElement.scrollHeight - 8;
+
+      if (nearBottom) setActiveId(lastId);
+    };
+
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+
+    return () => {
+      observers.forEach((o) => o.disconnect());
+      window.removeEventListener("scroll", onScroll);
+    };
+  }, []);
+
   return (
     <AppBar
       position="sticky"
       elevation={0}
       sx={{
+        top: 0,
+        zIndex: (theme) => theme.zIndex.appBar,
+
+        bgcolor: scrolled ? "rgba(15,23,42,0.78)" : "rgba(15,23,42,0.55)",
+
         backdropFilter: "blur(12px)",
-        backgroundColor: "rgba(15,23,42,0.85)",
+        WebkitBackdropFilter: "blur(12px)",
+
+        borderBottom: scrolled
+          ? "1px solid rgba(148,163,184,0.22)"
+          : "1px solid rgba(148,163,184,0.12)",
+
+        boxShadow: scrolled ? "0 10px 30px rgba(0,0,0,0.28)" : "none",
+
+        transition:
+          "background-color 200ms ease, border-color 200ms ease, box-shadow 200ms ease",
       }}
     >
-      <Toolbar sx={{ justifyContent: "space-between" }}>
-        <Typography variant="h6" sx={{ fontWeight: 700 }}>
+      <Toolbar
+        sx={{
+          justifyContent: "space-between",
+          py: scrolled ? 0.75 : 1.25,
+          transition: "padding 200ms ease",
+        }}
+      >
+        <Typography
+          variant="h6"
+          sx={{
+            fontWeight: 800,
+            letterSpacing: "-0.01em",
+          }}
+        >
           Jake Steele
         </Typography>
 
         <Box sx={{ display: "flex", gap: 1 }}>
-          {sections.map((section) => (
-            <Button
-              key={section.id}
-              color="inherit"
-              onClick={() => scrollToSection(section.id)}
-              sx={{ textTransform: "none", fontWeight: 500 }}
-            >
-              {section.label}
-            </Button>
-          ))}
+          {sections.map((section) => {
+            const isActive = activeId === section.id;
+
+            return (
+              <Button
+                key={section.id}
+                color="inherit"
+                onClick={() => scrollToSection(section.id)}
+                sx={{
+                  position: "relative",
+                  textTransform: "none",
+                  fontWeight: 600,
+                  borderRadius: 999,
+                  px: 1.5,
+                  py: 0.75,
+                  color: isActive
+                    ? "rgba(255,255,255,0.98)"
+                    : "rgba(226,232,240,0.92)",
+
+                  transition:
+                    "background-color 160ms ease, transform 160ms ease, color 160ms ease",
+
+                  "&:hover": {
+                    bgcolor: "rgba(255,255,255,0.10)",
+                    transform: "translateY(-1px)",
+                  },
+
+                  "&:active": {
+                    transform: "translateY(0px)",
+                  },
+
+                  /* Active indicator */
+                  "&::after": {
+                    content: '""',
+                    position: "absolute",
+                    left: "50%",
+                    bottom: 4,
+                    width: isActive ? "60%" : "0%",
+                    height: 2,
+                    borderRadius: 2,
+                    background:
+                      "linear-gradient(90deg, rgba(165,180,252,0.9), rgba(224,231,255,1))",
+                    transform: "translateX(-50%)",
+                    transition: "width 220ms ease",
+                  },
+                }}
+              >
+                {section.label}
+              </Button>
+            );
+          })}
         </Box>
       </Toolbar>
     </AppBar>
