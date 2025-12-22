@@ -18,14 +18,7 @@ export default function ProjectsSection() {
           title={project.name}
           description={project.shortDescription}
           tech={project.techStack}
-          href={project.links.live || project.links.github}
-          linkLabel={
-            project.links.live
-              ? "View live"
-              : project.links.github
-              ? "View code"
-              : "Learn more"
-          }
+          links={project.links}
         />
       ))}
     </BentoSection>

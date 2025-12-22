@@ -8,11 +8,11 @@ export const projects = [
     techStack: ["React", "Supabase", "PostgreSQL", "Vercel"],
     year: 2025,
     highlight: "End-to-end CRUD, RBAC, and email alerts in production.",
-    links: {
-      live: "https://your-innventory-url.vercel.app",
-      github: "https://github.com/your-org/innventory",
-      caseStudy: "/projects/innventory", // future route
-    },
+    links: [
+      // FIX ME TO DO CHANGE THESE HREFs JAKEY
+      { label: "Live", href: "https://my-innventory-url.vercel.app" },
+      { label: "Code", href: "https://github.com/your-org/innventory" },
+    ],
   },
   {
     id: "dolphins-swim-academy",
@@ -23,9 +23,7 @@ export const projects = [
     techStack: ["Spring Boot", "JTE", "MySQL"],
     year: 2025,
     highlight: "REST API + server-rendered UI with proper data modeling.",
-    links: {
-      github: "https://github.com/your-org/dolphins",
-    },
+    links: [{ label: "Code", href: "https://github.com/your-org/dolphins" }],
   },
   {
     id: "minesweeper-solver",
@@ -36,6 +34,6 @@ export const projects = [
     techStack: ["C++", "SFML", "Algorithms"],
     year: 2025,
     highlight: "Demonstrates recursion, backtracking, and state visualization.",
-    links: {},
+    links: [],
   },
 ];
