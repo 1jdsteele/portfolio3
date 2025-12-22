@@ -35,7 +35,7 @@ export default function ProjectCard({
             <MuiLink
               key={link.href + link.label}
               href={link.href}
-              underline="hover"
+              // underline="hover"
               target="_blank"
               rel="noreferrer"
               sx={{

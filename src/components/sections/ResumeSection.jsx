@@ -10,6 +10,36 @@ export default function ResumeSection() {
         title="Resume"
         subtitle="Quick snapshot + a link to the full PDF"
       />
+
+      {/* Quick link card */}
+      <BentoCard
+        sx={{
+          gridColumn: { xs: "1 / -1", sm: "span 3", md: "span 4" },
+          justifyContent: "center",
+        }}
+      >
+        {" "}
+        <Typography variant="overline" sx={{ opacity: 0.7 }}>
+          Get it now
+        </Typography>
+        <MuiLink
+          href="/jake-steele-resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          PDF
+        </MuiLink>
+        <MuiLink
+          href="https://docs.google.com/document/d/1qpIAVoFEX92gaLbfp_lyuuz6-wGz4JIqRv0q7WdShmI/edit?usp=sharing"
+          target="_blank"
+          rel="noopener noreferrer"
+          // underline="hover"
+          sx={{ mt: 1.25, display: "inline-block" }}
+        >
+          Other Downloads and Comment
+        </MuiLink>
+      </BentoCard>
+
       {/* Summary / what I'm looking for */}
       <BentoCard
         sx={{
@@ -21,31 +51,10 @@ export default function ResumeSection() {
           What I’m looking for
         </Typography>
         <Typography variant="body1" sx={{ mt: 1.25 }}>
-          I’m currently looking at backend or full-stack roles where I can work
-          with modern web stacks, distributed systems, and data-heavy workflows.
+          I’m looking for a backend or full-stack role that I can balance
+          alongside my studies, focused on modern web stacks, distributed
+          systems, and data-heavy workflows.
         </Typography>
-      </BentoCard>
-
-      {/* Quick link card */}
-      <BentoCard
-        sx={{
-          gridColumn: { xs: "1 / -1", sm: "span 3", md: "span 4" },
-          justifyContent: "center",
-        }}
-      >
-        {" "}
-        <Typography variant="overline" sx={{ opacity: 0.7 }}>
-          PDF
-        </Typography>
-        <MuiLink
-          href="/resume.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-          underline="hover"
-          sx={{ mt: 1.25, display: "inline-block" }}
-        >
-          Download full resume (PDF)
-        </MuiLink>
       </BentoCard>
 
       {/* Highlights card */}
@@ -74,6 +83,11 @@ export default function ResumeSection() {
           <li>
             <Typography variant="body2">
               Strong background in algorithms, data structures, and C++/Java.
+            </Typography>
+          </li>
+          <li>
+            <Typography variant="body2">
+              Collaborated in cross-disciplinary teams at Snapchat and AppFolio.
             </Typography>
           </li>
         </Stack>
