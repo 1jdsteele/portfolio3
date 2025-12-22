@@ -8,6 +8,7 @@ import {
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import React, { useEffect, useMemo, useState } from "react";
+import useInView from "../hooks/useInView";
 import { bentoHoverMotion } from "../styles/bentoMotions";
 import { getBentoTone } from "../styles/bentoTones";
 
@@ -21,6 +22,11 @@ export default function BentoSection({
   defaultOpenOnXs = false,
 }) {
   const t = getBentoTone(tone);
+
+  const { ref: revealRef, inView } = useInView({
+    threshold: 0.05,
+    rootMargin: "0px 0px -2% 0px",
+  });
 
   const theme = useTheme();
   const isXs = useMediaQuery(theme.breakpoints.down("sm")); // < 600px
@@ -84,6 +90,8 @@ export default function BentoSection({
       )}
 
       <Paper
+        ref={revealRef}
+        // className={`reveal ${inView ? "in-view" : ""}`}
         elevation={2}
         sx={{
           p: { xs: 2, md: 3 },
@@ -110,10 +118,17 @@ export default function BentoSection({
           bgcolor: "var(--bento-section-bg)",
           border: "1px solid var(--bento-outline)",
 
+          //Reveal state (composes with hover)
+          "--reveal-y": inView ? "0px" : "10px",
+          opacity: inView ? 1 : 0,
+          transform: "translateY(var(--reveal-y))",
+          willChange: "transform, opacity",
+
           ...bentoHoverMotion,
 
           "&:hover": {
-            transform: "translateY(-4px)",
+            // hover lift relative to reveal position
+            transform: "translateY(calc(var(--reveal-y) - 4px))",
             borderColor:
               "color-mix(in srgb, var(--bento-outline) 85%, transparent)",
             boxShadow: `
@@ -122,9 +137,19 @@ export default function BentoSection({
     0 0 40px color-mix(in srgb, var(--bento-outline) 65%, transparent)
   `,
           },
-          "&:active": { transform: "translateY(-2px)" },
+          "&:active": {
+            transform: "translateY(calc(var(--reveal-y) - 2px))",
+          },
+
+          // make sure opacity is included for reveal transition
           transition:
-            "transform 160ms ease, background-color 200ms ease, border-color 200ms ease, box-shadow 260ms ease",
+            "opacity 900ms ease, transform 520ms ease, background-color 200ms ease, border-color 200ms ease, box-shadow 260ms ease",
+
+          "@media (prefers-reduced-motion: reduce)": {
+            transition: "none",
+            transform: "none",
+            opacity: 1,
+          },
         }}
       >
         {/* HEADER (always visible) */}
