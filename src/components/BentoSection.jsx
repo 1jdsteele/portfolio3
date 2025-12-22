@@ -111,6 +111,20 @@ export default function BentoSection({
           border: "1px solid var(--bento-outline)",
 
           ...bentoHoverMotion,
+
+          "&:hover": {
+            transform: "translateY(-4px)",
+            borderColor:
+              "color-mix(in srgb, var(--bento-outline) 85%, transparent)",
+            boxShadow: `
+    0 28px 70px rgba(0,0,0,0.30),
+    0 0 0 1px color-mix(in srgb, var(--bento-outline) 75%, transparent),
+    0 0 40px color-mix(in srgb, var(--bento-outline) 65%, transparent)
+  `,
+          },
+          "&:active": { transform: "translateY(-2px)" },
+          transition:
+            "transform 160ms ease, background-color 200ms ease, border-color 200ms ease, box-shadow 260ms ease",
         }}
       >
         {/* HEADER (always visible) */}
