@@ -5,13 +5,22 @@ import BentoSection from "../BentoSection";
 import SectionHeaderCard from "../SectionHeaderCard";
 
 const skills = [
-  "React",
-  "Supabase",
-  "PostgreSQL",
-  "Spring Boot",
   "C++",
-  "Python",
   "Java",
+  "Python",
+  "JavaScript",
+  "SQL",
+  "React",
+  "Spring Boot",
+  "Node.js",
+  "PostgreSQL",
+  "MongoDB",
+  "REST APIs",
+  "Distributed Systems",
+  "Docker",
+  "AWS",
+  "CI/CD",
+  "Supabase",
   "K8s",
   "React Native",
 ];
@@ -82,19 +91,22 @@ export default function AboutSection() {
       <BentoCard
         sx={{
           gridColumn: { xs: "1 / -1", sm: "span 3", md: "span 8" },
-          justifyContent: "flex-start",
+          justifyContent: {
+            xs: "flex-start",
+            md: "center",
+          },
         }}
       >
         <Typography variant="body1" sx={{ mb: 2 }}>
-          I’m Jake, a CS grad student in Los Angeles focused on building
-          real-world, production-ready software. I enjoy backend-heavy
-          full-stack work: React + Supabase, Spring Boot, and distributed
-          systems/algorithms.
+          I’m Jake, a CS grad student interested in how real systems are
+          designed, built, and maintained. I enjoy full-stack development where
+          clean architecture meets business impact.
         </Typography>
         <Typography variant="body1">
-          Recent projects include an inventory system for hotels, a swim school
-          management portal, and a bunch of algorithm-heavy toys like a
-          Minesweeper solver and learning AIs for games.
+          I’ve worked on cross-disciplinary teams at AppFolio and Snapchat,
+          shipping revenue-driving features and prototyping new ideas. Most
+          recently, I led a team building a full-stack hotel inventory web
+          application from the ground up.
         </Typography>
       </BentoCard>
 

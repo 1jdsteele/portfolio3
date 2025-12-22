@@ -12,7 +12,8 @@ export default function HeroIntroSection() {
     "a Software Generalist",
     "a React + Supabase Developer",
     "a planner",
-    "a risk-taker",
+    "an API caller",
+    "loving my algorithms class",
   ];
 
   const [roleIndex, setRoleIndex] = useState(0);
