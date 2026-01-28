@@ -35,7 +35,7 @@ export default function ContactSection() {
           <Typography variant="body2">
             Email:{" "}
             <MuiLink
-              href="mailto:jdsteeleprofessional@gmail.com"
+              href="mailto:jakesteele.engineer@gmail.com"
               sx={{
                 color: "var(--bento-link)",
                 textDecorationColor:
@@ -46,7 +46,7 @@ export default function ContactSection() {
                 },
               }}
             >
-              jdsteeleprofessional@gmail.com
+              jakesteele.engineer@gmail.com
             </MuiLink>
           </Typography>
           <Typography variant="body2">
