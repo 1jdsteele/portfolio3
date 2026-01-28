@@ -109,7 +109,7 @@ export default function BentoSection({
           gap: { xs: 2, md: 2.5 },
           alignItems: "stretch",
 
-          // CSS vars (your tone system)
+          // CSS vars
           "--bento-section-bg": t.sectionBg,
           "--bento-card-bg": t.cardBg,
           "--bento-outline": t.outline,
@@ -118,8 +118,11 @@ export default function BentoSection({
           "--bento-link": t.link ?? "rgba(226, 232, 240, 0.95)",
           "--bento-link-hover": t.linkHover ?? "rgba(255,255,255,1)",
 
+          // HERE trying to ge the background color (and border) to be invisible in xs
           bgcolor: "var(--bento-section-bg)",
+          // bgcolor: { xs: "none", sm: "var(--bento-section-bg)" },
           border: "1px solid var(--bento-outline)",
+          // border: { xs: "none", sm: "1px solid var(--bento-outline)" },
 
           //Reveal state (composes with hover)
           "--reveal-y": inView ? "0px" : "10px",

@@ -1,5 +1,22 @@
 export const projects = [
   {
+    id: "weather-analytics-pipeline",
+    name: "Weather Analytics Pipeline",
+    shortDescription:
+      "A modern ELT analytics pipeline, containerized with Docker, and orchestrated with Apache Airflow. Real-time weather data is ingested from Open-Meteo, transformed into OLAP-optimized tables in ClickHouse, and visualized through Metabase dashboards.",
+    role: "Solo Project",
+    techStack: ["Apache Airflow", "ClickHouse", "Metabase", "Python", "Docker"],
+    year: 2026,
+    highlight:
+      "I learned a lot about how to deal with hiccups in raw data ingestion.",
+    links: [
+      {
+        label: "Code",
+        href: "https://github.com/1jdsteele/weather-pipeline/",
+      },
+    ],
+  },
+  {
     id: "competitive-pokemon-catalog",
     name: "Competitive Pokemon Catalog",
     shortDescription:
