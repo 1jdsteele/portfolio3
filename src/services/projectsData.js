@@ -93,7 +93,7 @@ export const projects = [
     shortDescription:
       "You're looking at it! Just something I threw together in prep for applying to internships summer '26.",
     role: "Solo Project",
-    techStack: ["React"],
+    techStack: ["React", "Material UI"],
     year: 2025,
     highlight:
       "I love that AI can help me with styling - I always feel like I struggle with that.",
