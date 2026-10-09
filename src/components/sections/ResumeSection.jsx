@@ -63,54 +63,6 @@ export default function ResumeSection() {
         </Typography>
       </BentoCard>
 
-      {/* <BentoCard
-        sx={{
-          gridColumn: { xs: "1 / -1", sm: "span 6", md: "span 12" },
-          justifyContent: "center",
-        }}
-      >
-        <Typography variant="body2" sx={{ opacity: 0.8, mb: 1 }}>
-          Highlights:
-        </Typography>
-
-        <Box
-          component="ul"
-          sx={{
-            pl: 3,
-            m: 0,
-            display: { xs: "flex", md: "grid" },
-            flexDirection: "column",
-            gridTemplateColumns: { md: "repeat(2, minmax(0, 1fr))" },
-            gap: 1,
-            columnGap: { md: 4 },
-          }}
-        >
-          <li>
-            <Typography variant="body1" sx={{ mt: 1.25 }}>
-              MS in Computer Science at CSULA, graduating May
-              2027; conducting graduate research on algorithmic fairness.
-            </Typography>
-          </li>
-          <li>
-            <Typography variant="body1" sx={{ mt: 1.25 }}>
-              Professional data engineering experience building production data
-              pipelines with Python, SQL, and Apache Airflow.
-            </Typography>
-          </li>
-          <li>
-            <Typography variant="body1" sx={{ mt: 1.25 }}>
-              Full-stack development experience with React, React Native, REST
-              APIs, and relational databases.
-            </Typography>
-          </li>
-          <li>
-            <Typography variant="body1" sx={{ mt: 1.25 }}>
-              Cross-functional engineering experience at VS Media, Snap
-              Engineering Academy, and AppFolio.
-            </Typography>
-          </li>
-        </Box>
-      </BentoCard> */}
       {/* Highlights card */}
       <BentoCard
         sx={{
