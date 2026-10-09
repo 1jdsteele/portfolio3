@@ -9,7 +9,7 @@ export default function ProjectsSection() {
     <BentoSection id="projects" tone="emerald">
       <SectionHeaderCard
         title="Projects"
-        subtitle="A few things I’ve been building lately"
+        subtitle="Things I have explored, built, shipped"
       />
 
       {projects.map((project) => (
