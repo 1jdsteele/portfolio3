@@ -29,14 +29,14 @@ export default function ResumeSection() {
           Get it now
         </Typography>
         <MuiLink
-          href="/jake-steele-resume.pdf"
+          href="/jake_steele_resume.pdf"
           target="_blank"
           rel="noopener noreferrer"
         >
           PDF
         </MuiLink>
         <MuiLink
-          href="https://docs.google.com/document/d/1qpIAVoFEX92gaLbfp_lyuuz6-wGz4JIqRv0q7WdShmI/edit?usp=sharing"
+          href="https://docs.google.com/document/d/1nuHO0XlHvSYjspqXFmsEjGacaGBIh6cpV8rRui80Zk8/edit?tab=t.0"
           target="_blank"
           rel="noopener noreferrer"
           // underline="hover"
