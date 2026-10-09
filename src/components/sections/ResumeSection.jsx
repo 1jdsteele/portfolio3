@@ -1,4 +1,10 @@
-import { Link as MuiLink, Stack, Typography } from "@mui/material";
+import { Box, Link as MuiLink, Typography } from "@mui/material";
+import {
+  BriefcaseBusiness,
+  CodeXml,
+  Database,
+  GraduationCap,
+} from "lucide-react";
 import BentoCard from "../BentoCard";
 import BentoSection from "../BentoSection";
 import SectionHeaderCard from "../SectionHeaderCard";
@@ -36,7 +42,7 @@ export default function ResumeSection() {
           // underline="hover"
           sx={{ mt: 1.25, display: "inline-block" }}
         >
-          Other Downloads and Comment
+          Google Drive for other downloads
         </MuiLink>
       </BentoCard>
 
@@ -51,46 +57,137 @@ export default function ResumeSection() {
           What I’m looking for
         </Typography>
         <Typography variant="body1" sx={{ mt: 1.25 }}>
-          I’m looking for a backend or full-stack role that I can balance
-          alongside my studies, focused on modern web stacks, distributed
-          systems, and data-heavy workflows.
+          I'm looking for opportunities in data engineering, machine learning,
+          or full-stack development where I can build reliable systems, solve
+          interesting problems, and continue growing as an engineer.
         </Typography>
       </BentoCard>
 
-      {/* Highlights card */}
-      <BentoCard
+      {/* <BentoCard
         sx={{
-          gridColumn: { xs: "1 / -1", sm: "span 6", md: "span 8" },
+          gridColumn: { xs: "1 / -1", sm: "span 6", md: "span 12" },
           justifyContent: "center",
         }}
       >
         <Typography variant="body2" sx={{ opacity: 0.8, mb: 1 }}>
           Highlights:
         </Typography>
-        <Stack component="ul" sx={{ pl: 3, m: 0 }} spacing={1}>
+
+        <Box
+          component="ul"
+          sx={{
+            pl: 3,
+            m: 0,
+            display: { xs: "flex", md: "grid" },
+            flexDirection: "column",
+            gridTemplateColumns: { md: "repeat(2, minmax(0, 1fr))" },
+            gap: 1,
+            columnGap: { md: 4 },
+          }}
+        >
           <li>
-            <Typography variant="body2">
-              MS in Computer Science at CSULA (in progress), focused on software
-              engineering and algorithms.
+            <Typography variant="body1" sx={{ mt: 1.25 }}>
+              MS in Computer Science at CSULA, graduating May
+              2027; conducting graduate research on algorithmic fairness.
             </Typography>
           </li>
           <li>
-            <Typography variant="body2">
-              Experience with production deployments (Vercel, Netlify),
-              relational data modeling, and REST API design.
+            <Typography variant="body1" sx={{ mt: 1.25 }}>
+              Professional data engineering experience building production data
+              pipelines with Python, SQL, and Apache Airflow.
             </Typography>
           </li>
           <li>
-            <Typography variant="body2">
-              Strong background in algorithms, data structures, and C++/Java.
+            <Typography variant="body1" sx={{ mt: 1.25 }}>
+              Full-stack development experience with React, React Native, REST
+              APIs, and relational databases.
             </Typography>
           </li>
           <li>
-            <Typography variant="body2">
-              Collaborated in cross-disciplinary teams at Snapchat and AppFolio.
+            <Typography variant="body1" sx={{ mt: 1.25 }}>
+              Cross-functional engineering experience at VS Media, Snap
+              Engineering Academy, and AppFolio.
             </Typography>
           </li>
-        </Stack>
+        </Box>
+      </BentoCard> */}
+      {/* Highlights card */}
+      <BentoCard
+        sx={{
+          gridColumn: { xs: "1 / -1", sm: "span 6", md: "span 12" },
+          justifyContent: "center",
+        }}
+      >
+        {/* <Typography variant="h6" sx={{ mb: 1 }}> */}
+        <Typography variant="body2" sx={{ opacity: 0.8, mb: 1 }}>
+          Highlights
+        </Typography>
+
+        <Box
+          component="ul"
+          sx={{
+            listStyle: "none",
+            pl: 0,
+            m: 0,
+            display: { xs: "flex", md: "grid" },
+            flexDirection: "column",
+            gridTemplateColumns: { md: "repeat(2, minmax(0, 1fr))" },
+            gap: { xs: 1, md: 3 },
+            columnGap: { md: 4 },
+          }}
+        >
+          <Box
+            component="li"
+            sx={{ display: "flex", alignItems: "center", gap: 1.5 }}
+          >
+            <GraduationCap
+              size={24}
+              strokeWidth={2}
+              style={{ flexShrink: 0 }}
+            />
+            <Typography variant="body1" sx={{ mt: 1.25 }}>
+              MS in Computer Science at CSULA, graduating May 2027; conducting
+              graduate research on algorithmic fairness.
+            </Typography>
+          </Box>
+
+          <Box
+            component="li"
+            sx={{ display: "flex", alignItems: "center", gap: 1.5 }}
+          >
+            <Database size={24} strokeWidth={2} style={{ flexShrink: 0 }} />
+            <Typography variant="body1" sx={{ mt: 1.25 }}>
+              Professional data engineer: experience building production data
+              pipelines with Python, SQL, and Apache Airflow.
+            </Typography>
+          </Box>
+
+          <Box
+            component="li"
+            sx={{ display: "flex", alignItems: "center", gap: 1.5 }}
+          >
+            <CodeXml size={24} strokeWidth={2} style={{ flexShrink: 0 }} />
+            <Typography variant="body1" sx={{ mt: 1.25 }}>
+              Full-stack development experience with React, React Native, REST
+              APIs, and relational databases.
+            </Typography>
+          </Box>
+
+          <Box
+            component="li"
+            sx={{ display: "flex", alignItems: "center", gap: 1.5 }}
+          >
+            <BriefcaseBusiness
+              size={24}
+              strokeWidth={2}
+              style={{ flexShrink: 0 }}
+            />
+            <Typography variant="body1" sx={{ mt: 1.25 }}>
+              Cross-functional engineering experience at VS Media, Snapchat, and
+              AppFolio.
+            </Typography>
+          </Box>
+        </Box>
       </BentoCard>
     </BentoSection>
   );
