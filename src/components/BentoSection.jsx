@@ -69,7 +69,7 @@ export default function BentoSection({
   };
 
   // Timing shared by the shell, content, and chevron.
-  const expandDuration = 380;
+  const expandDuration = 500; //HERE
   const expandEasing = "cubic-bezier(0.22, 1, 0.36, 1)";
 
   return (
@@ -298,6 +298,7 @@ export default function BentoSection({
               // Keep the contents mounted so opacity can
               // transition smoothly from 0 to 1.
             >
+              {/* HERE (not here, opacity below) */}
               <Box
                 sx={{
                   opacity: open ? 1 : 0,
@@ -305,7 +306,7 @@ export default function BentoSection({
                   transform: open ? "translateY(0)" : "translateY(8px)",
 
                   transition: `
-            opacity ${open ? 260 : 160}ms ease ${open ? 90 : 0}ms,
+            opacity ${open ? 300 : 160}ms ease ${open ? 200 : 0}ms, 
             transform ${expandDuration}ms ${expandEasing}
           `,
 
