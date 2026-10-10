@@ -7,13 +7,14 @@ export default function HeroIntroSection() {
   const [imgIndex, setImgIndex] = useState(0);
 
   const roles = [
+    "a Data Engineer",
+    "creative",
     "a Full-Stack Engineer",
     "a CS Grad Student",
-    "a Software Generalist",
+    "collaborative",
     "a React + Supabase Developer",
-    "a planner",
     "an API caller",
-    "loving my algorithms class",
+    "an innovator",
   ];
 
   const [roleIndex, setRoleIndex] = useState(0);
