@@ -105,7 +105,7 @@ export default function BentoSection({
         elevation={canCollapse ? 0 : 2}
         sx={{
           p: { xs: 2, md: 3 },
-          borderRadius: 4,
+          borderRadius: 3,
 
           // Needed for the animated shell
           position: "relative",
