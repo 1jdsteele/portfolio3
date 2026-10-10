@@ -1,12 +1,39 @@
+// import { Typography } from "@mui/material";
+// import BentoCard from "./BentoCard";
+
+// export default function SectionHeaderCard({
+//   title,
+//   subtitle,
+//   //in cleanup, I am pretty sure I no longer use this and can delete
+//   gridColumn = { xs: "1 / -1", md: "span 4" },
+// }) {
+//   return (
+//     <BentoCard
+//       sx={{
+//         gridColumn: { xs: "1 / -1", sm: "span 6", md: "span 4" },
+//         justifyContent: "space-between",
+//         py: 5,
+//         textAlign: { xs: "center", sm: "center", md: "left" },
+//       }}
+//     >
+//       <Typography variant="h4" sx={{ fontWeight: 700 }}>
+//         {title}
+//       </Typography>
+
+//       {subtitle && (
+//         <Typography variant="body2" sx={{ opacity: 0.65 }}>
+//           {subtitle}
+//         </Typography>
+//       )}
+//     </BentoCard>
+//   );
+// }
+
 import { Typography } from "@mui/material";
+import { bentoHoverMotion } from "../styles/bentoMotions";
 import BentoCard from "./BentoCard";
 
-export default function SectionHeaderCard({
-  title,
-  subtitle,
-  //in cleanup, I am pretty sure I no longer use this and can delete
-  gridColumn = { xs: "1 / -1", md: "span 4" },
-}) {
+export default function SectionHeaderCard({ title, subtitle }) {
   return (
     <BentoCard
       sx={{
@@ -14,6 +41,11 @@ export default function SectionHeaderCard({
         justifyContent: "space-between",
         py: 5,
         textAlign: { xs: "center", sm: "center", md: "left" },
+
+        // Only animate at xs widths (< 600px)
+        "@media (max-width: 599.95px)": {
+          ...bentoHoverMotion,
+        },
       }}
     >
       <Typography variant="h4" sx={{ fontWeight: 700 }}>

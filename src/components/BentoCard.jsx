@@ -1,5 +1,4 @@
 import { Paper } from "@mui/material";
-import { bentoHoverMotion } from "../styles/bentoMotions";
 
 export default function BentoCard({ children, sx = {}, ...rest }) {
   return (
@@ -24,12 +23,11 @@ export default function BentoCard({ children, sx = {}, ...rest }) {
         backgroundImage:
           "linear-gradient(180deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 55%, rgba(255,255,255,0) 100%)",
 
-        "&:hover": {
-          backgroundImage:
-            "linear-gradient(180deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.03) 55%, rgba(255,255,255,0) 100%)",
-        },
+        // "&:hover": {
+        //   backgroundImage:
+        //     "linear-gradient(180deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.03) 55%, rgba(255,255,255,0) 100%)",
+        // },
 
-        ...bentoHoverMotion,
         ...sx,
         contentVisibility: "auto",
         containIntrinsicSize: "280px",
