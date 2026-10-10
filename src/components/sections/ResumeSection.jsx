@@ -1,4 +1,10 @@
-import { Link as MuiLink, Stack, Typography } from "@mui/material";
+import { Box, Link as MuiLink, Typography } from "@mui/material";
+import {
+  BriefcaseBusiness,
+  CodeXml,
+  Database,
+  GraduationCap,
+} from "lucide-react";
 import BentoCard from "../BentoCard";
 import BentoSection from "../BentoSection";
 import SectionHeaderCard from "../SectionHeaderCard";
@@ -23,20 +29,20 @@ export default function ResumeSection() {
           Get it now
         </Typography>
         <MuiLink
-          href="/jake-steele-resume.pdf"
+          href="/jake_steele_resume.pdf"
           target="_blank"
           rel="noopener noreferrer"
         >
           PDF
         </MuiLink>
         <MuiLink
-          href="https://docs.google.com/document/d/1qpIAVoFEX92gaLbfp_lyuuz6-wGz4JIqRv0q7WdShmI/edit?usp=sharing"
+          href="https://docs.google.com/document/d/1nuHO0XlHvSYjspqXFmsEjGacaGBIh6cpV8rRui80Zk8/edit?tab=t.0"
           target="_blank"
           rel="noopener noreferrer"
           // underline="hover"
           sx={{ mt: 1.25, display: "inline-block" }}
         >
-          Other Downloads and Comment
+          Google Drive for other downloads
         </MuiLink>
       </BentoCard>
 
@@ -51,46 +57,89 @@ export default function ResumeSection() {
           What I’m looking for
         </Typography>
         <Typography variant="body1" sx={{ mt: 1.25 }}>
-          I’m looking for a backend or full-stack role that I can balance
-          alongside my studies, focused on modern web stacks, distributed
-          systems, and data-heavy workflows.
+          I'm looking for opportunities in data engineering, machine learning,
+          or full-stack development where I can build reliable systems, solve
+          interesting problems, and continue growing as an engineer.
         </Typography>
       </BentoCard>
 
       {/* Highlights card */}
       <BentoCard
         sx={{
-          gridColumn: { xs: "1 / -1", sm: "span 6", md: "span 8" },
+          gridColumn: { xs: "1 / -1", sm: "span 6", md: "span 12" },
           justifyContent: "center",
         }}
       >
+        {/* <Typography variant="h6" sx={{ mb: 1 }}> */}
         <Typography variant="body2" sx={{ opacity: 0.8, mb: 1 }}>
-          Highlights:
+          Highlights
         </Typography>
-        <Stack component="ul" sx={{ pl: 3, m: 0 }} spacing={1}>
-          <li>
-            <Typography variant="body2">
-              MS in Computer Science at CSULA (in progress), focused on software
-              engineering and algorithms.
+
+        <Box
+          component="ul"
+          sx={{
+            listStyle: "none",
+            pl: 0,
+            m: 0,
+            display: { xs: "flex", md: "grid" },
+            flexDirection: "column",
+            gridTemplateColumns: { md: "repeat(2, minmax(0, 1fr))" },
+            gap: { xs: 1, md: 3 },
+            columnGap: { md: 4 },
+          }}
+        >
+          <Box
+            component="li"
+            sx={{ display: "flex", alignItems: "center", gap: 1.5 }}
+          >
+            <GraduationCap
+              size={24}
+              strokeWidth={2}
+              style={{ flexShrink: 0 }}
+            />
+            <Typography variant="body1" sx={{ mt: 1.25 }}>
+              MS in Computer Science at CSULA, graduating May 2027; conducting
+              graduate research on algorithmic fairness.
             </Typography>
-          </li>
-          <li>
-            <Typography variant="body2">
-              Experience with production deployments (Vercel, Netlify),
-              relational data modeling, and REST API design.
+          </Box>
+
+          <Box
+            component="li"
+            sx={{ display: "flex", alignItems: "center", gap: 1.5 }}
+          >
+            <Database size={24} strokeWidth={2} style={{ flexShrink: 0 }} />
+            <Typography variant="body1" sx={{ mt: 1.25 }}>
+              Professional data engineer: experience building production data
+              pipelines with Python, SQL, and Apache Airflow.
             </Typography>
-          </li>
-          <li>
-            <Typography variant="body2">
-              Strong background in algorithms, data structures, and C++/Java.
+          </Box>
+
+          <Box
+            component="li"
+            sx={{ display: "flex", alignItems: "center", gap: 1.5 }}
+          >
+            <CodeXml size={24} strokeWidth={2} style={{ flexShrink: 0 }} />
+            <Typography variant="body1" sx={{ mt: 1.25 }}>
+              Full-stack development experience with React, React Native, REST
+              APIs, and relational databases.
             </Typography>
-          </li>
-          <li>
-            <Typography variant="body2">
-              Collaborated in cross-disciplinary teams at Snapchat and AppFolio.
+          </Box>
+
+          <Box
+            component="li"
+            sx={{ display: "flex", alignItems: "center", gap: 1.5 }}
+          >
+            <BriefcaseBusiness
+              size={24}
+              strokeWidth={2}
+              style={{ flexShrink: 0 }}
+            />
+            <Typography variant="body1" sx={{ mt: 1.25 }}>
+              Cross-functional engineering experience at VS Media, Snapchat, and
+              AppFolio.
             </Typography>
-          </li>
-        </Stack>
+          </Box>
+        </Box>
       </BentoCard>
     </BentoSection>
   );

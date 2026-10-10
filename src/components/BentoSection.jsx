@@ -10,7 +10,6 @@ import { useTheme } from "@mui/material/styles";
 import React, { useEffect, useMemo, useState } from "react";
 import useInView from "../hooks/useInView";
 import useResizeSettleClass from "../hooks/useResizeSettleClass";
-import { bentoHoverMotion } from "../styles/bentoMotions";
 import { getBentoTone } from "../styles/bentoTones";
 
 export default function BentoSection({
@@ -36,7 +35,7 @@ export default function BentoSection({
 
   const childArray = useMemo(
     () => React.Children.toArray(children),
-    [children]
+    [children],
   );
   const headerChild = childArray[0] ?? null;
   const contentChildren = childArray.slice(1);
@@ -130,22 +129,20 @@ export default function BentoSection({
           transform: "translateY(var(--reveal-y))",
           willChange: "transform, opacity",
 
-          ...bentoHoverMotion,
-
-          "&:hover": {
-            // hover lift relative to reveal position
-            transform: "translateY(calc(var(--reveal-y) - 4px))",
-            borderColor:
-              "color-mix(in srgb, var(--bento-outline) 85%, transparent)",
-            boxShadow: `
-    0 28px 70px rgba(0,0,0,0.30),
-    0 0 0 1px color-mix(in srgb, var(--bento-outline) 75%, transparent),
-    0 0 40px color-mix(in srgb, var(--bento-outline) 65%, transparent)
-  `,
-          },
-          "&:active": {
-            transform: "translateY(calc(var(--reveal-y) - 2px))",
-          },
+          //         "&:hover": {
+          //           // hover lift relative to reveal position
+          //           transform: "translateY(calc(var(--reveal-y) - 4px))",
+          //           borderColor:
+          //             "color-mix(in srgb, var(--bento-outline) 85%, transparent)",
+          //           boxShadow: `
+          //   0 28px 70px rgba(0,0,0,0.30),
+          //   0 0 0 1px color-mix(in srgb, var(--bento-outline) 75%, transparent),
+          //   0 0 40px color-mix(in srgb, var(--bento-outline) 65%, transparent)
+          // `,
+          //         },
+          //         "&:active": {
+          //           transform: "translateY(calc(var(--reveal-y) - 2px))",
+          //         },
 
           // make sure opacity is included for reveal transition
           transition:

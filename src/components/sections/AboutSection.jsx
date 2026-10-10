@@ -5,24 +5,19 @@ import BentoSection from "../BentoSection";
 import SectionHeaderCard from "../SectionHeaderCard";
 
 const skills = [
+  "Python",
+  "SQL",
+  "Apache Airflow",
+  "ClickHouse",
+  "PostgreSQL",
+  "Docker",
+  "K8s",
+  "JavaScript",
+  "React",
+  "React Native",
+  "Node.js",
   "C++",
   "Java",
-  "Python",
-  "JavaScript",
-  "SQL",
-  "React",
-  "Spring Boot",
-  "Node.js",
-  "PostgreSQL",
-  "MongoDB",
-  "REST APIs",
-  "Distributed Systems",
-  "Docker",
-  "AWS",
-  "CI/CD",
-  "Supabase",
-  "K8s",
-  "React Native",
 ];
 
 export default function AboutSection() {
@@ -47,13 +42,13 @@ export default function AboutSection() {
       >
         <BentoCard sx={{ py: 1.75, justifyContent: "center", gap: 2 }}>
           <Typography variant="h6" sx={{ fontWeight: 700 }}>
-            CS grad student
+            M.S. Computer Science · 2027
           </Typography>
         </BentoCard>
 
         <BentoCard sx={{ py: 1.75, justifyContent: "center", gap: 2 }}>
           <Typography variant="h6" sx={{ fontWeight: 700 }}>
-            Full-stack irl dev
+            Software & Data Engineer
           </Typography>
         </BentoCard>
 
@@ -90,7 +85,7 @@ export default function AboutSection() {
       {/* Main text + skills: */}
       <BentoCard
         sx={{
-          gridColumn: { xs: "1 / -1", sm: "span 3", md: "span 8" },
+          gridColumn: { xs: "1 / -1", sm: "span 6", md: "span 8" },
         }}
       >
         <Box
@@ -102,22 +97,21 @@ export default function AboutSection() {
           }}
         >
           <Typography variant="body1" sx={{ mb: 2 }}>
-            I’m Jake, a CS grad student interested in how real systems are
-            designed, built, and maintained. I enjoy full-stack development
-            where clean architecture meets business impact.
+            I’m Jake, a CS grad student building data pipelines and backend
+            systems at VS Media.
           </Typography>
           <Typography variant="body1">
             I’ve worked on cross-disciplinary teams at AppFolio and Snapchat,
-            shipping revenue-driving features and prototyping new ideas. Most
-            recently, I led a team building a full-stack hotel inventory web
-            application from the ground up.
+            shipping revenue-driving features and prototyping new ideas. I enjoy
+            full-stack development where clean architecture meets business
+            impact.
           </Typography>
         </Box>
       </BentoCard>
 
       <BentoCard
         sx={{
-          gridColumn: { xs: "1 / -1", sm: "span 3", md: "span 4" },
+          gridColumn: { xs: "1 / -1", sm: "span 6", md: "span 4" },
           // justifyContent: "flex-start",
           justifyContent: "space-between",
           py: 2.5,

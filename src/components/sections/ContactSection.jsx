@@ -8,7 +8,7 @@ export default function ContactSection() {
     <BentoSection id="contact" tone="rose">
       <SectionHeaderCard
         title="Contact"
-        subtitle="Let’s talk about internships, collaborations, or fun side projects"
+        subtitle="Let’s talk about opportunitites, collaborations, or fun side projects"
         // gridColumn={{ xs: "1 / -1", md: "span " }}
       />
 
