@@ -70,8 +70,17 @@ export default function ResumeSection() {
           justifyContent: "center",
         }}
       >
-        {/* <Typography variant="h6" sx={{ mb: 1 }}> */}
-        <Typography variant="body2" sx={{ opacity: 0.8, mb: 1 }}>
+        <Typography
+          variant="overline"
+          sx={{
+            opacity: 0.7,
+            // fontSize: "0.9rem",
+            // fontWeight: 600,
+            // letterSpacing: "0.1em",
+            // pl: 1,
+            // mb: 1.5,
+          }}
+        >
           Highlights
         </Typography>
 
