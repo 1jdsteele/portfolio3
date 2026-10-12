@@ -1,88 +1,10 @@
-// // src/components/sections/ProjectsSection.jsx
-// import { projects } from "../../services/projectsData";
-// import BentoSection from "../BentoSection";
-// import ProjectCard from "../ProjectCard";
-// import SectionHeaderCard from "../SectionHeaderCard";
-
-// export default function ProjectsSection() {
-//   return (
-//     <BentoSection id="projects" tone="emerald">
-//       <SectionHeaderCard
-//         title="Projects"
-//         subtitle="Things I have explored, built, shipped"
-//       />
-
-//       {projects.map((project) => (
-//         <ProjectCard
-//           key={project.id}
-//           title={project.name}
-//           description={project.shortDescription}
-//           tech={project.techStack}
-//           links={project.links}
-//         />
-//       ))}
-//     </BentoSection>
-//   );
-// }
-
-// import { Typography } from "@mui/material";
-// import { projects } from "../../services/projectsData";
-// import BentoCard from "../BentoCard";
-// import BentoSection from "../BentoSection";
-// import ProjectCard from "../ProjectCard";
-// import SectionHeaderCard from "../SectionHeaderCard";
-
-// export default function ProjectsSection() {
-//   return (
-//     <BentoSection id="projects" tone="emerald">
-//       <SectionHeaderCard
-//         title="Projects"
-//         subtitle="A few things I’ve been building lately"
-//       />
-
-//       {projects.map((project) => (
-//         <ProjectCard
-//           key={project.id}
-//           title={project.name}
-//           description={project.shortDescription}
-//           tech={project.techStack}
-//           links={project.links}
-//         />
-//       ))}
-
-//       {/* View all projects card - visual only for now */}
-//       <BentoCard
-//         sx={{
-//           gridColumn: { xs: "1 / -1", sm: "span 3", md: "span 4" },
-//           justifyContent: "center",
-//           alignItems: "center",
-//           textAlign: "center",
-//           gap: 2,
-//         }}
-//       >
-//         <Typography variant="h6" sx={{ fontWeight: 700 }}>
-//           Explore More
-//         </Typography>
-
-//         <Typography variant="body2" sx={{ opacity: 0.75 }}>
-//           Browse all {projects.length} projects
-//         </Typography>
-
-//         <Typography
-//           variant="subtitle1"
-//           sx={{
-//             fontWeight: 600,
-//             color: "var(--bento-link)",
-//           }}
-//         >
-//           View All Projects →
-//         </Typography>
-//       </BentoCard>
-//     </BentoSection>
-//   );
-// }
-
-import { Button, Typography, useMediaQuery } from "@mui/material";
+import {
+  Box,
+  Button,
+  Collapse,
+  Typography,
+  useMediaQuery,
+} from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import { useState } from "react";
 import { projects } from "../../services/projectsData";
@@ -101,7 +23,57 @@ export default function ProjectsSection() {
   // Number of projects shown in collapsed mode
   const featuredCount = isXs ? 3 : isBelowMd ? 4 : 5;
 
-  const visibleProjects = showAll ? projects : projects.slice(0, featuredCount);
+  const featuredProjects = projects.slice(0, featuredCount);
+  const additionalProjects = projects.slice(featuredCount);
+
+  const handleToggleProjects = () => {
+    // Expanding: keep the current behavior
+    if (!showAll) {
+      setShowAll(true);
+      return;
+    }
+
+    // Collapsing: scroll to the Projects header first
+    const section = document.getElementById("projects");
+
+    if (!section) {
+      setShowAll(false);
+      return;
+    }
+
+    const finishCollapse = () => setShowAll(false);
+
+    const scrollMargin =
+      parseFloat(getComputedStyle(section).scrollMarginTop) || 0;
+
+    const alreadyAtTop =
+      Math.abs(section.getBoundingClientRect().top - scrollMargin) < 6;
+
+    const reducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+
+    // Collapse immediately if we're already at the target,
+    // or if smooth scrolling isn't appropriate/supported.
+    if (alreadyAtTop || reducedMotion || !("onscrollend" in window)) {
+      section.scrollIntoView({
+        behavior: "instant",
+        block: "start",
+      });
+      finishCollapse();
+      return;
+    }
+
+    // Wait until the smooth scroll finishes before collapsing
+    window.addEventListener("scrollend", finishCollapse, {
+      once: true,
+    });
+
+    section.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
 
   return (
     <BentoSection id="projects" tone="emerald">
@@ -110,7 +82,18 @@ export default function ProjectsSection() {
         subtitle="Things I have explored, built, shipped"
       />
 
-      {visibleProjects.map((project) => (
+      {/* {visibleProjects.map((project) => (
+        <ProjectCard
+          key={project.id}
+          title={project.name}
+          description={project.shortDescription}
+          tech={project.techStack}
+          links={project.links}
+        />
+      ))} */}
+
+      {/* Featured projects — always visible */}
+      {featuredProjects.map((project) => (
         <ProjectCard
           key={project.id}
           title={project.name}
@@ -119,6 +102,38 @@ export default function ProjectsSection() {
           links={project.links}
         />
       ))}
+
+      {/* Additional projects — animated expansion */}
+      <Collapse
+        in={showAll}
+        timeout={350}
+        unmountOnExit
+        sx={{
+          gridColumn: "1 / -1",
+        }}
+      >
+        <Box
+          sx={{
+            display: "grid",
+            gridTemplateColumns: {
+              xs: "1fr",
+              sm: "repeat(6, minmax(0, 1fr))",
+              md: "repeat(12, minmax(0, 1fr))",
+            },
+            gap: { xs: 2, md: 2.5 },
+          }}
+        >
+          {additionalProjects.map((project) => (
+            <ProjectCard
+              key={project.id}
+              title={project.name}
+              description={project.shortDescription}
+              tech={project.techStack}
+              links={project.links}
+            />
+          ))}
+        </Box>
+      </Collapse>
 
       {projects.length > featuredCount && (
         <BentoCard
@@ -167,7 +182,7 @@ export default function ProjectsSection() {
           </Typography>
 
           <Button
-            onClick={() => setShowAll((prev) => !prev)}
+            onClick={handleToggleProjects}
             aria-expanded={showAll}
             variant="text"
             sx={{
