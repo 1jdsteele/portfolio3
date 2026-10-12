@@ -12,7 +12,7 @@ export default function ProjectCard({
       sx={{
         gridColumn: { xs: "1 / -1", sm: "span 3", md: "span 4" },
         justifyContent: "space-between",
-        py: 5,
+        // py: 5,
       }}
     >
       <Typography variant="subtitle1" sx={{ fontWeight: 600, mb: 1 }}>

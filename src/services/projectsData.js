@@ -1,4 +1,17 @@
 export const projects = [
+  // 1. Recombee Data Ingestion
+  {
+    id: "recombee-data-ingestion",
+    name: "API Data Ingestion DAGs",
+    context: "Professional Work · VS Media",
+    shortDescription:
+      "Developed production Apache Airflow pipelines to extract millions of records from a rate limited API into object storage and load them into a columnar analytical database on a daily basis. Implemented idempotent loading, staging validation, deduplication, and reliable data publication.",
+    techStack: ["Python", "Apache Airflow", "ClickHouse", "SQL"],
+    year: 2026,
+    highlight:
+      "Built ingestion workflows that handle large datasets, API rate limits, and repeatable data loading while preserving data integrity.",
+    links: [],
+  },
   // 3. Master's Thesis / Fairness Research
   {
     id: "algorithmic-fairness-research",
@@ -56,18 +69,23 @@ export const projects = [
       { label: "Code", href: "https://github.com/1jdsteele/SnapStudyRooms" },
     ],
   },
-  // 1. Recombee Data Ingestion
+  // 4. Snap AI Chatbot
   {
-    id: "recombee-data-ingestion",
-    name: "API Data Ingestion DAGs",
-    context: "Professional Work · VS Media",
+    id: "snap-ai-chatbot",
+    name: "AI Chatbot & Fantasy RPG",
+    context: "Snap Engineering Academy",
     shortDescription:
-      "Developed production Apache Airflow pipelines to extract millions of records from a rate limited API into object storage and load them into a columnar analytical database on a daily basis. Implemented idempotent loading, staging validation, deduplication, and reliable data publication.",
-    techStack: ["Python", "Apache Airflow", "ClickHouse", "SQL"],
-    year: 2026,
+      "Built a React Native chatbot app featuring rule-based trivia and an LLM-powered fantasy RPG, with interactive storytelling, answer validation, and scoring.",
+    techStack: ["React Native", "JavaScript", "Expo", "OpenAI API", "LLM"],
+    year: 2025,
     highlight:
-      "Built ingestion workflows that handle large datasets, API rate limits, and repeatable data loading while preserving data integrity.",
-    links: [],
+      "Combined traditional rule-based game logic with generative AI to create different interactive experiences within a single mobile application.",
+    links: [
+      {
+        label: "Code",
+        href: "https://github.com/Snap-Engineering-Academy-2025/snapchatbots-jakesteele/tree/main",
+      },
+    ],
   },
   // 2. Change Data Capture
   {
@@ -178,25 +196,6 @@ export const projects = [
   //     { label: "", href: "" },
   //   ],
   // },
-
-  // 4. Snap AI Chatbot
-  {
-    id: "snap-ai-chatbot",
-    name: "AI Chatbot & Fantasy RPG",
-    context: "Snap Engineering Academy",
-    shortDescription:
-      "Built a React Native chatbot app featuring rule-based trivia and an LLM-powered fantasy RPG, with interactive storytelling, answer validation, and scoring.",
-    techStack: ["React Native", "JavaScript", "Expo", "OpenAI API", "LLM"],
-    year: 2025,
-    highlight:
-      "Combined traditional rule-based game logic with generative AI to create different interactive experiences within a single mobile application.",
-    links: [
-      {
-        label: "Code",
-        href: "https://github.com/Snap-Engineering-Academy-2025/snapchatbots-jakesteele/tree/main",
-      },
-    ],
-  },
 
   // 5. Airflow DAG Factory Modernization
   {
