@@ -5,7 +5,7 @@ import AboutSection from "../components/sections/AboutSection";
 import ContactSection from "../components/sections/ContactSection";
 import HeroIntroSection from "../components/sections/HeroIntroSection";
 import ProjectsSection from "../components/sections/ProjectsSection";
-import ResumeSection from "../components/sections/ResumeSection";
+// import ResumeSection from "../components/sections/ResumeSection";
 
 export default function HomePage() {
   return (
@@ -21,7 +21,7 @@ export default function HomePage() {
 
       <AboutSection />
       <ProjectsSection />
-      <ResumeSection />
+      {/* <ResumeSection /> */}
       <ContactSection />
     </Box>
   );

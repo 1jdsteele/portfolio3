@@ -13,7 +13,7 @@ export default function ContactSection() {
       />
 
       {/* Blurb card */}
-      <BentoCard
+      {/* <BentoCard
         sx={{
           gridColumn: { xs: "1 / -1", sm: "span 3", md: "span 4" },
           justifyContent: "center",
@@ -22,6 +22,34 @@ export default function ContactSection() {
         <Typography variant="body1">
           The best way to reach me is via email.
         </Typography>
+      </BentoCard> */}
+      {/* Quick link card */}
+      <BentoCard
+        sx={{
+          gridColumn: { xs: "1 / -1", sm: "span 3", md: "span 4" },
+          justifyContent: "center",
+        }}
+      >
+        {" "}
+        <Typography variant="overline" sx={{ opacity: 0.7 }}>
+          Get my resume
+        </Typography>
+        <MuiLink
+          href="/jake_steele_resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          PDF
+        </MuiLink>
+        <MuiLink
+          href="https://docs.google.com/document/d/1nuHO0XlHvSYjspqXFmsEjGacaGBIh6cpV8rRui80Zk8/edit?tab=t.0"
+          target="_blank"
+          rel="noopener noreferrer"
+          // underline="hover"
+          sx={{ mt: 1.25, display: "inline-block" }}
+        >
+          Google Drive for other downloads
+        </MuiLink>
       </BentoCard>
 
       {/* Links card */}
