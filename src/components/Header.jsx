@@ -21,6 +21,7 @@ import useScrollToSection from "../hooks/useScrollToSection";
 // On-page sections scroll into view; the resume is an external document action.
 const navItems = [
   { id: "about", label: "About" },
+  { id: "experience", label: "Experience" },
   { id: "projects", label: "Projects" },
   // { id: "resume", label: "Resume" }, // Former on-page Resume section
   { id: "resume-pdf", label: "Resume", href: "/jake_steele_resume.pdf" },

@@ -6,6 +6,7 @@ import ContactSection from "../components/sections/ContactSection";
 import HeroIntroSection from "../components/sections/HeroIntroSection";
 import ProjectsSection from "../components/sections/ProjectsSection";
 // import ResumeSection from "../components/sections/ResumeSection";
+import ExperienceSection from "../components/sections/ExperienceSection";
 
 export default function HomePage() {
   return (
@@ -20,6 +21,7 @@ export default function HomePage() {
       <HeroIntroSection />
 
       <AboutSection />
+      <ExperienceSection />
       <ProjectsSection />
       {/* <ResumeSection /> */}
       <ContactSection />
