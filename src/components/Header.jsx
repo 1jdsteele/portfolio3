@@ -1,5 +1,6 @@
 import CloseIcon from "@mui/icons-material/Close";
 import MenuIcon from "@mui/icons-material/Menu";
+import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import {
   AppBar,
   Box,
@@ -17,12 +18,18 @@ import { useTheme } from "@mui/material/styles";
 import { useEffect, useState } from "react";
 import useScrollToSection from "../hooks/useScrollToSection";
 
-const sections = [
+// On-page sections scroll into view; the resume is an external document action.
+const navItems = [
   { id: "about", label: "About" },
+  { id: "experience", label: "Experience" },
   { id: "projects", label: "Projects" },
-  { id: "resume", label: "Resume" },
+  // { id: "resume", label: "Resume" }, // Former on-page Resume section
+  { id: "resume-pdf", label: "Resume", href: "/jake_steele_resume.pdf" },
   { id: "contact", label: "Contact" },
 ];
+
+// Only actual page sections participate in active-section tracking.
+const sections = navItems.filter((item) => !item.href);
 
 export default function Header() {
   const { scrollToSection } = useScrollToSection();
@@ -60,7 +67,7 @@ export default function Header() {
         {
           rootMargin: "-45% 0px -45% 0px",
           threshold: 0,
-        }
+        },
       );
 
       observer.observe(el);
@@ -137,14 +144,21 @@ export default function Header() {
         {/* Desktop nav */}
         {!isXs && (
           <Box sx={{ display: "flex", gap: 1 }}>
-            {sections.map((section) => {
-              const isActive = activeId === section.id;
+            {navItems.map((item) => {
+              const isActive = !item.href && activeId === item.id;
 
               return (
                 <Button
-                  key={section.id}
+                  key={item.id}
                   color="inherit"
-                  onClick={() => go(section.id)}
+                  {...(item.href
+                    ? {
+                        component: "a",
+                        href: item.href,
+                        target: "_blank",
+                        rel: "noopener noreferrer",
+                      }
+                    : { onClick: () => go(item.id) })}
                   sx={{
                     position: "relative",
                     textTransform: "none",
@@ -177,7 +191,13 @@ export default function Header() {
                     },
                   }}
                 >
-                  {section.label}
+                  {item.label}
+                  {item.href && (
+                    <OpenInNewIcon
+                      aria-hidden="true"
+                      sx={{ fontSize: 15, ml: 0.65 }}
+                    />
+                  )}
                 </Button>
               );
             })}
@@ -235,13 +255,21 @@ export default function Header() {
               </Box>
 
               <List sx={{ py: 1 }}>
-                {sections.map((section) => {
-                  const isActive = activeId === section.id;
+                {navItems.map((item) => {
+                  const isActive = !item.href && activeId === item.id;
 
                   return (
                     <ListItemButton
-                      key={section.id}
-                      onClick={() => go(section.id)}
+                      key={item.id}
+                      {...(item.href
+                        ? {
+                            component: "a",
+                            href: item.href,
+                            target: "_blank",
+                            rel: "noopener noreferrer",
+                            onClick: () => setMenuOpen(false),
+                          }
+                        : { onClick: () => go(item.id) })}
                       sx={{
                         mx: 1,
                         my: 0.5,
@@ -256,7 +284,7 @@ export default function Header() {
                       }}
                     >
                       <ListItemText
-                        primary={section.label}
+                        primary={item.label}
                         primaryTypographyProps={{
                           sx: {
                             fontWeight: isActive ? 700 : 600,
@@ -264,6 +292,12 @@ export default function Header() {
                           },
                         }}
                       />
+                      {item.href && (
+                        <OpenInNewIcon
+                          aria-hidden="true"
+                          sx={{ fontSize: 18, color: "rgba(226,232,240,0.75)" }}
+                        />
+                      )}
                     </ListItemButton>
                   );
                 })}

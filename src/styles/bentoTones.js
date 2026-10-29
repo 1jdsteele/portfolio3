@@ -51,12 +51,108 @@ export const BENTO_TONES = {
     cardHoverOutline: "rgba(253, 186, 116, 0.28)",
   },
 
+  // mustard: {
+  //   sectionBg: "rgba(66, 56, 5, 0.56)",
+  //   cardBg: "rgba(66, 56, 5, 0.84)",
+  //   cardHoverBg: "rgba(66, 56, 5, 0.92)",
+  //   outline: "rgba(253, 230, 138, 0.14)",
+  //   cardHoverOutline: "rgba(253, 230, 138, 0.26)",
+  //   link: "rgba(253, 230, 138, 0.95)",
+  //   linkHover: "rgba(254, 240, 180, 1)",
+  // },
+  // mustard: {
+  //   sectionBg: "rgba(66, 56, 5, 0.40)",
+  //   cardBg: "rgba(66, 56, 5, 0.66)",
+  //   cardHoverBg: "rgba(66, 56, 5, 0.78)",
+
+  //   outline: "rgba(253, 230, 138, 0.20)",
+  //   cardHoverOutline: "rgba(253, 230, 138, 0.34)",
+
+  //   link: "rgba(253, 230, 138, 0.95)",
+  //   linkHover: "rgba(254, 240, 180, 1)",
+  // },
+  // mustard: {
+  //   sectionBg: "rgba(88, 67, 9, 0.46)",
+  //   cardBg: "rgba(101, 78, 10, 0.72)",
+  //   cardHoverBg: "rgba(101, 78, 10, 0.82)",
+
+  //   outline: "rgba(255, 225, 130, 0.22)",
+  //   cardHoverOutline: "rgba(255, 225, 130, 0.36)",
+
+  //   link: "rgba(255, 232, 155, 0.95)",
+  //   linkHover: "rgba(255, 246, 190, 1)",
+  // },
+  // mustard: {
+  //   sectionBg: "rgba(110, 84, 10, 0.44)",
+  //   cardBg: "rgba(128, 96, 12, 0.72)",
+  //   cardHoverBg: "rgba(145, 108, 14, 0.82)",
+
+  //   outline: "rgba(255, 222, 110, 0.24)",
+  //   cardHoverOutline: "rgba(255, 222, 110, 0.40)",
+
+  //   link: "rgba(255, 232, 155, 0.95)",
+  //   linkHover: "rgba(255, 245, 200, 1)",
+  // },
+  // mustard: {
+  //   sectionBg: "rgba(146, 112, 17, 0.46)",
+  //   cardBg: "rgba(156, 116, 15, 0.74)",
+  //   cardHoverBg: "rgba(160, 118, 16, 0.84)",
+
+  //   outline: "rgba(255, 226, 120, 0.26)",
+  //   cardHoverOutline: "rgba(255, 226, 120, 0.42)",
+
+  //   link: "rgba(255, 236, 165, 0.96)",
+  //   linkHover: "rgba(255, 247, 205, 1)",
+  // },
+  // mustard: {
+  //   sectionBg: "rgba(203, 156, 25, 0.46)",
+  //   cardBg: "rgba(156, 116, 15, 0.74)",
+  //   cardHoverBg: "rgba(160, 118, 16, 0.84)",
+
+  //   outline: "rgba(255, 226, 120, 0.26)",
+  //   cardHoverOutline: "rgba(255, 226, 120, 0.42)",
+
+  //   link: "rgba(255, 236, 165, 0.96)",
+  //   linkHover: "rgba(255, 247, 205, 1)",
+  // },
+
+  //my bright!
+  // mustard: {
+  //   sectionBg: "rgba(178, 136, 22, 0.46)",
+  //   cardBg: "rgba(201, 149, 17, 0.74)",
+  //   cardHoverBg: "rgba(160, 118, 16, 0.84)",
+
+  //   outline: "rgba(255, 226, 120, 0.26)",
+  //   cardHoverOutline: "rgba(255, 226, 120, 0.42)",
+
+  //   link: "rgba(255, 236, 165, 0.96)",
+  //   linkHover: "rgba(255, 247, 205, 1)",
+  // },
+
+  //golden amber
+  // mustard: {
+  //   sectionBg: "rgba(173, 113, 10, 0.47)",
+  //   cardBg: "rgba(199, 136, 12, 0.72)",
+  //   cardHoverBg: "rgba(207, 146, 15, 0.82)",
+
+  //   outline: "rgba(255, 227, 132, 0.28)",
+  //   cardHoverOutline: "rgba(255, 227, 132, 0.42)",
+
+  //   link: "rgba(255, 240, 175, 0.96)",
+  //   linkHover: "rgba(255, 250, 215, 1)",
+  // },
+
+  //rich amber
   mustard: {
-    sectionBg: "rgba(66, 56, 5, 0.56)",
-    cardBg: "rgba(66, 56, 5, 0.84)",
-    cardHoverBg: "rgba(66, 56, 5, 0.92)",
-    outline: "rgba(253, 230, 138, 0.14)",
-    cardHoverOutline: "rgba(253, 230, 138, 0.26)",
+    sectionBg: "rgba(144, 97, 13, 0.46)",
+    cardBg: "rgba(176, 121, 16, 0.70)",
+    cardHoverBg: "rgba(189, 133, 19, 0.80)",
+
+    outline: "rgba(255, 226, 125, 0.24)",
+    cardHoverOutline: "rgba(255, 226, 125, 0.38)",
+
+    link: "rgba(255, 236, 165, 0.96)",
+    linkHover: "rgba(255, 247, 205, 1)",
   },
 };
 
