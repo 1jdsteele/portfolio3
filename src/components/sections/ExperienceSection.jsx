@@ -7,7 +7,10 @@ import SectionHeaderCard from "../SectionHeaderCard";
 export default function ExperienceSection() {
   return (
     <BentoSection id="experience" tone="mustard">
-      <SectionHeaderCard title="Experience" subtitle="Where I've worked" />
+      <SectionHeaderCard
+        title="Experience"
+        subtitle="Where the rubber meets the code"
+      />
 
       {experiences.map((experience, index) => {
         // The first experience is featured through placement, not different styling.

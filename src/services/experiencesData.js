@@ -1,37 +1,6 @@
-// export const experiences = [
-//   {
-//     id: "vs-media",
-//     company: "VS Media",
-//     role: "BI Engineer",
-//     location: "Los Angeles, CA",
-//     startDate: "Mar 2026",
-//     endDate: "Present",
-//     employmentType: "Contract",
-//     initials: "VS",
-
-//     description:
-//       "Building and maintaining production data infrastructure, automated pipelines, and analytics workflows.",
-
-//     highlights: [
-//       {
-//         icon: "pipeline",
-//         text: "Developed daily data ingestion pipelines moving Recombee data through MinIO into ClickHouse.",
-//       },
-//       {
-//         icon: "workflow",
-//         text: "Refactored Airflow pipeline infrastructure and added reusable data validation workflows.",
-//       },
-//       {
-//         icon: "database",
-//         text: "Worked with production databases and distributed analytics systems.",
-//       },
-//     ],
-
-//     tech: ["Python", "SQL", "Airflow", "ClickHouse", "Docker", "Recombee"],
-
-//     links: [],
-//   },
-// ];
+import snapLogo from "../assets/companies/Snapchat_App_Icon.png";
+import appfolioLogo from "../assets/companies/appfolio_logo.png";
+import vsMediaLogo from "../assets/companies/vsmedia-linkedin.png";
 
 export const experiences = [
   {
@@ -42,6 +11,7 @@ export const experiences = [
     startDate: "Mar 2026",
     endDate: "Present",
     employmentType: "Contract",
+    logo: vsMediaLogo,
     initials: "VS", // Replace with `logo` when you add a company image.
     description:
       "Building and maintaining production data infrastructure, automated pipelines, and analytics workflows.",
@@ -69,6 +39,7 @@ export const experiences = [
     startDate: "Jun 2025",
     endDate: "Aug 2025",
     employmentType: "Engineering Academy",
+    logo: snapLogo,
     initials: "SN",
     description:
       "Developed a React Native mobile application prototype in a cross-functional engineering, design, and product team.",
@@ -96,6 +67,8 @@ export const experiences = [
     startDate: "May 2023",
     endDate: "Aug 2023",
     employmentType: "Internship · Payments",
+    logo: appfolioLogo,
+    logoScale: 1.12,
     initials: "AF",
     description:
       "Tested and debugged payment features in a large-scale property management SaaS platform.",

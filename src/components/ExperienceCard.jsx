@@ -38,6 +38,7 @@ export default function ExperienceCard({
   tech = [],
   links = [],
   logo,
+  logoScale = 1,
   initials,
   sx = {},
 }) {
@@ -108,7 +109,12 @@ export default function ExperienceCard({
                 component="img"
                 src={logo}
                 alt={`${company} logo`}
-                sx={{ width: "100%", height: "100%", objectFit: "contain" }}
+                sx={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "contain",
+                  transform: `scale(${logoScale})`,
+                }}
               />
             ) : (
               <Typography

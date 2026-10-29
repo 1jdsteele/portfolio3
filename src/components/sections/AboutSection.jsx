@@ -1,10 +1,5 @@
 import { Box, Chip, Stack, Typography } from "@mui/material";
-import {
-  BriefcaseBusiness,
-  CodeXml,
-  Database,
-  GraduationCap,
-} from "lucide-react";
+import { BriefcaseBusiness, CodeXml, Database } from "lucide-react";
 import headshot from "../../assets/portrait.jpeg";
 import BentoCard from "../BentoCard";
 import BentoSection from "../BentoSection";
@@ -32,7 +27,7 @@ export default function AboutSection() {
       {/* Header card: span 6 */}
       <SectionHeaderCard
         title="About me"
-        subtitle="I'm on a quest for better software"
+        subtitle="hello, world"
         // gridColumn={{ xs: "1 / -1", md: "span " }}
       />
 
@@ -89,7 +84,7 @@ export default function AboutSection() {
       </BentoCard>
 
       {/* Main text + skills: */}
-      <BentoCard
+      {/* <BentoCard
         sx={{
           gridColumn: { xs: "1 / -1", sm: "span 6", md: "span 8" },
         }}
@@ -113,29 +108,12 @@ export default function AboutSection() {
             impact.
           </Typography>
         </Box>
-      </BentoCard>
+      </BentoCard> */}
 
-      <BentoCard
-        sx={{
-          gridColumn: { xs: "1 / -1", sm: "span 6", md: "span 4" },
-          // justifyContent: "flex-start",
-          justifyContent: "space-between",
-          py: 2.5,
-        }}
-      >
-        <Typography variant="subtitle2" sx={{ opacity: 0.7, mb: 0.75 }}>
-          Tech I enjoy
-        </Typography>
-        <Stack direction="row" flexWrap="wrap" gap={1}>
-          {skills.map((tag) => (
-            <Chip key={tag} label={tag} size="small" />
-          ))}
-        </Stack>
-      </BentoCard>
       {/* Highlights card */}
       <BentoCard
         sx={{
-          gridColumn: { xs: "1 / -1", sm: "span 6", md: "span 12" },
+          gridColumn: { xs: "1 / -1", sm: "span 6", md: "span 8" },
           justifyContent: "center",
         }}
       >
@@ -161,7 +139,7 @@ export default function AboutSection() {
             m: 0,
             display: { xs: "flex", md: "grid" },
             flexDirection: "column",
-            gridTemplateColumns: { md: "repeat(2, minmax(0, 1fr))" },
+            gridTemplateColumns: "1fr",
             gap: { xs: 1, md: 3 },
             columnGap: { md: 4 },
           }}
@@ -180,7 +158,7 @@ export default function AboutSection() {
               AppFolio.
             </Typography>
           </Box>
-          <Box
+          {/* <Box
             component="li"
             sx={{ display: "flex", alignItems: "center", gap: 1.5 }}
           >
@@ -193,7 +171,7 @@ export default function AboutSection() {
               MS in Computer Science at CSULA, graduating May 2027; conducting
               graduate research on algorithmic fairness.
             </Typography>
-          </Box>
+          </Box> */}
 
           <Box
             component="li"
@@ -218,8 +196,53 @@ export default function AboutSection() {
           </Box>
         </Box>
       </BentoCard>
-      {/* Summary / what I'm looking for */}
+
+      {/* <BentoCard
+        sx={{
+          gridColumn: { xs: "1 / -1", sm: "span 6", md: "span 4" },
+          // justifyContent: "flex-start",
+          justifyContent: "space-between",
+          py: 2.5,
+        }}
+      >
+        <Typography variant="subtitle2" sx={{ opacity: 0.7, mb: 0.75 }}>
+          Tech I enjoy
+        </Typography>
+        <Stack direction="row" flexWrap="wrap" gap={1}>
+          {skills.map((tag) => (
+            <Chip key={tag} label={tag} size="small" />
+          ))}
+        </Stack>
+      </BentoCard> */}
+
       <BentoCard
+        sx={{
+          gridColumn: { xs: "1 / -1", sm: "span 6", md: "span 4" },
+          justifyContent: "flex-start",
+          py: 2.5,
+        }}
+      >
+        <Typography variant="subtitle2" sx={{ opacity: 0.7, mb: 0.75 }}>
+          Tech I enjoy
+        </Typography>
+
+        <Box
+          sx={{
+            flex: 1,
+            display: "flex",
+            alignItems: "center",
+          }}
+        >
+          <Stack direction="row" flexWrap="wrap" gap={1}>
+            {skills.map((tag) => (
+              <Chip key={tag} label={tag} size="small" />
+            ))}
+          </Stack>
+        </Box>
+      </BentoCard>
+
+      {/* Summary / what I'm looking for */}
+      {/* <BentoCard
         sx={{
           gridColumn: { xs: "1 / -1", sm: "span 3", md: "span 4" },
           justifyContent: "center",
@@ -233,7 +256,7 @@ export default function AboutSection() {
           or full-stack development where I can build reliable systems, solve
           interesting problems, and continue growing as an engineer.
         </Typography>
-      </BentoCard>
+      </BentoCard> */}
     </BentoSection>
   );
 }

@@ -77,10 +77,7 @@ export default function ProjectsSection() {
 
   return (
     <BentoSection id="projects" tone="emerald">
-      <SectionHeaderCard
-        title="Projects"
-        subtitle="Things I have explored, built, shipped"
-      />
+      <SectionHeaderCard title="Projects" subtitle="It worked on my machine" />
 
       {/* {visibleProjects.map((project) => (
         <ProjectCard
