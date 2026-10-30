@@ -3,7 +3,6 @@ import { BriefcaseBusiness, CodeXml, Database } from "lucide-react";
 import headshot from "../../assets/portrait.jpeg";
 import BentoCard from "../BentoCard";
 import BentoSection from "../BentoSection";
-import SectionHeaderCard from "../SectionHeaderCard";
 
 const skills = [
   "Python",
@@ -23,15 +22,14 @@ const skills = [
 
 export default function AboutSection() {
   return (
-    <BentoSection id="about" tone="indigo">
-      {/* Header card: span 6 */}
-      <SectionHeaderCard
-        title="About me"
-        subtitle="hello, world"
-        // gridColumn={{ xs: "1 / -1", md: "span " }}
-      />
-
+    <BentoSection
+      id="about"
+      tone="indigo"
+      title="About me"
+      subtitle="hello, world"
+    >
       {/* Right-side vertical stack: span 4 */}
+
       <Box
         sx={{
           gridColumn: { xs: "1 / -1", sm: "span 3", md: "span 4" },
