@@ -2,16 +2,15 @@
 import { experiences } from "../../services/experiencesData";
 import BentoSection from "../BentoSection";
 import ExperienceCard from "../ExperienceCard";
-import SectionHeaderCard from "../SectionHeaderCard";
 
 export default function ExperienceSection() {
   return (
-    <BentoSection id="experience" tone="mustard">
-      <SectionHeaderCard
-        title="Experience"
-        subtitle="Where the rubber meets the code"
-      />
-
+    <BentoSection
+      id="experience"
+      tone="poppy"
+      title="Experience"
+      subtitle="Where the rubber meets the code"
+    >
       {experiences.map((experience, index) => {
         // The first experience is featured through placement, not different styling.
         const isFeatured = index === 0;

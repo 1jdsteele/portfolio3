@@ -7,7 +7,6 @@ import { Divider, Link as MuiLink, Stack, Typography } from "@mui/material";
 
 import BentoCard from "../BentoCard";
 import BentoSection from "../BentoSection";
-import SectionHeaderCard from "../SectionHeaderCard";
 
 const linkSx = {
   display: "inline-flex",
@@ -32,9 +31,12 @@ const linkSx = {
 
 export default function ContactSection() {
   return (
-    <BentoSection id="contact" tone="rose">
-      <SectionHeaderCard title="Contact" subtitle="Let's connect the nodes" />
-
+    <BentoSection
+      id="contact"
+      tone="rose"
+      title="Contact"
+      subtitle="Let's connect the nodes"
+    >
       {/* What I'm looking for */}
       <BentoCard
         sx={{

@@ -7,11 +7,11 @@ import {
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import { useState } from "react";
+
 import { projects } from "../../services/projectsData";
 import BentoCard from "../BentoCard";
 import BentoSection from "../BentoSection";
 import ProjectCard from "../ProjectCard";
-import SectionHeaderCard from "../SectionHeaderCard";
 
 export default function ProjectsSection() {
   const [showAll, setShowAll] = useState(false);
@@ -20,20 +20,20 @@ export default function ProjectsSection() {
   const isXs = useMediaQuery(theme.breakpoints.down("sm"));
   const isBelowMd = useMediaQuery(theme.breakpoints.down("md"));
 
-  // Number of projects shown in collapsed mode
+  // Number of featured projects shown at each breakpoint
   const featuredCount = isXs ? 3 : isBelowMd ? 4 : 5;
 
   const featuredProjects = projects.slice(0, featuredCount);
   const additionalProjects = projects.slice(featuredCount);
 
   const handleToggleProjects = () => {
-    // Expanding: keep the current behavior
+    // Expand additional projects
     if (!showAll) {
       setShowAll(true);
       return;
     }
 
-    // Collapsing: scroll to the Projects header first
+    // Scroll to the Projects section before collapsing
     const section = document.getElementById("projects");
 
     if (!section) {
@@ -53,8 +53,6 @@ export default function ProjectsSection() {
       "(prefers-reduced-motion: reduce)",
     ).matches;
 
-    // Collapse immediately if we're already at the target,
-    // or if smooth scrolling isn't appropriate/supported.
     if (alreadyAtTop || reducedMotion || !("onscrollend" in window)) {
       section.scrollIntoView({
         behavior: "instant",
@@ -64,7 +62,7 @@ export default function ProjectsSection() {
       return;
     }
 
-    // Wait until the smooth scroll finishes before collapsing
+    // Wait until scrolling finishes before collapsing
     window.addEventListener("scrollend", finishCollapse, {
       once: true,
     });
@@ -76,20 +74,13 @@ export default function ProjectsSection() {
   };
 
   return (
-    <BentoSection id="projects" tone="emerald">
-      <SectionHeaderCard title="Projects" subtitle="It worked on my machine" />
-
-      {/* {visibleProjects.map((project) => (
-        <ProjectCard
-          key={project.id}
-          title={project.name}
-          description={project.shortDescription}
-          tech={project.techStack}
-          links={project.links}
-        />
-      ))} */}
-
-      {/* Featured projects — always visible */}
+    <BentoSection
+      id="projects"
+      tone="emerald"
+      title="Projects"
+      subtitle="It worked on my machine"
+    >
+      {/* Featured projects — always visible when section is open */}
       {featuredProjects.map((project) => (
         <ProjectCard
           key={project.id}
@@ -132,36 +123,24 @@ export default function ProjectsSection() {
         </Box>
       </Collapse>
 
+      {/* Explore More / Show Less */}
       {projects.length > featuredCount && (
         <BentoCard
-          // sx={{
-          //   gridColumn: {
-          //     xs: "1 / -1",
-          //     sm: showAll ? "span 3" : "span 6",
-          //     md: showAll ? "span 4" : "span 12",
-          //   },
-          //   justifyContent: "center",
-          //   alignItems: "center",
-          //   textAlign: "center",
-          //   gap: 2,
-          // }}
-
           sx={{
-            // Reserve a full row
             gridColumn: "1 / -1",
 
             // Match the width of a normal project card
             width: {
-              xs: "100%",
+              xs: "min(100%, 340px)",
               sm: "calc((100% - 16px) / 2)",
               md: "calc((100% - 40px) / 3)",
             },
 
-            // Center the card in its row
+            // Center the card within its row
             justifySelf: "center",
             boxSizing: "border-box",
 
-            // Center the content inside the card
+            // Center card contents
             justifyContent: "center",
             alignItems: "center",
             textAlign: "center",
@@ -188,6 +167,7 @@ export default function ProjectsSection() {
               fontSize: "1rem",
               color: "var(--bento-link)",
               textDecoration: "underline",
+
               "&:hover": {
                 color: "var(--bento-link-hover)",
                 bgcolor: "transparent",
