@@ -21,6 +21,18 @@ export const BENTO_TONES = {
     linkHover: "rgba(224, 231, 255, 1)",
   },
 
+  //ACTUAL INDIGO???????
+  // indigo: {
+  //   sectionBg: "rgba(62, 27, 75, 0.58)",
+  //   cardBg: "rgba(62, 27, 75, 0.84)",
+  //   cardHoverBg: "rgba(30, 27, 75, 0.92)",
+  //   outline: "rgba(165, 180, 252, 0.22)",
+  //   cardHoverOutline: "rgba(165, 180, 252, 0.36)",
+
+  //   link: "rgba(199, 210, 254, 0.95)",
+  //   linkHover: "rgba(224, 231, 255, 1)",
+  // },
+
   emerald: {
     sectionBg: "rgba(6, 42, 34, 0.58)",
     cardBg: "rgba(6, 42, 34, 0.84)",
@@ -52,16 +64,13 @@ export const BENTO_TONES = {
   //   cardHoverOutline: "rgba(253, 186, 116, 0.28)",
   // },
 
-  //i like it :)
-  //polished carnelian
   poppy: {
-    sectionBg: "rgba(88, 28, 7, 0.56)",
+    sectionBg: "rgba(88, 28, 7, 0.58)",
+    cardBg: "rgba(88, 28, 7, 0.86)",
+    cardHoverBg: "rgba(88, 28, 7, 0.92)",
 
-    cardBg: "rgba(236, 97, 24, 0.65)",
-    cardHoverBg: "rgba(238, 100, 26, 0.65)",
-
-    outline: "rgba(255, 153, 87, 0.28)",
-    cardHoverOutline: "rgba(255, 184, 110, 0.43)",
+    outline: "rgba(255, 166, 105, 0.18)",
+    cardHoverOutline: "rgba(255, 184, 120, 0.30)",
 
     link: "rgba(255, 220, 168, 0.96)",
     linkHover: "rgba(255, 241, 204, 1)",
